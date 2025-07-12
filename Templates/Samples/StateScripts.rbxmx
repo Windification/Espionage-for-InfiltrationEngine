@@ -1944,6 +1944,218 @@ b2wCAAAAAA==]]></BinaryString>
 					</Vector3>
 				</Properties>
 			</Item>
+			<Item class="Folder" referent="RBX3B13CB3A86994A63910353B611707635">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<string name="Name">RespawningItemScript</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="Part" referent="RBX72DE9A18BF4C4F96933F4129D9FE588D">
+					<Properties>
+						<bool name="Anchored">true</bool>
+						<BinaryString name="AttributesSerialize"><![CDATA[BAAAAAoAAABEZWJ1Z0xvZ0lkAhEAAABSYW5kb21JdGVtU3Bhd25lcgMAAABSdW4CAQAAADEM
+AAAAU2NyaXB0U291cmNlApUAAAA6TG9vcApXQUlUIDQKU0VUICNJdGVtUGlja3VwIDAKQ09Q
+WVRPIEl0ZW1UZW1wbGF0ZSAjQ0ZyYW1lIEl0ZW1Db3B5IEl0ZW1SZW1vdmVkVmFyaWFibGUg
+W1sjSXRlbVBpY2t1cF1dCldBSVRGT1IgI0l0ZW1QaWNrdXAKREVMRVRFIEl0ZW1Db3B5CkdP
+VE8gTG9vcAMAAABUYWcCCAAAAFNwYXduUmVm]]></BinaryString>
+						<bool name="AudioCanCollide">true</bool>
+						<float name="BackParamA">-0.5</float>
+						<float name="BackParamB">0.5</float>
+						<token name="BackSurface">0</token>
+						<token name="BackSurfaceInput">0</token>
+						<float name="BottomParamA">-0.5</float>
+						<float name="BottomParamB">0.5</float>
+						<token name="BottomSurface">10</token>
+						<token name="BottomSurfaceInput">0</token>
+						<CoordinateFrame name="CFrame">
+							<X>-15.500001</X>
+							<Y>-5.5</Y>
+							<Z>-0.299934387</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>0</R11>
+							<R12>1</R12>
+							<R20>0</R20>
+							<R21>-1</R21>
+							<R22>0</R22>
+						</CoordinateFrame>
+						<bool name="CanCollide">true</bool>
+						<bool name="CanQuery">true</bool>
+						<bool name="CanTouch">true</bool>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="CastShadow">false</bool>
+						<string name="CollisionGroup">Default</string>
+						<int name="CollisionGroupId">0</int>
+						<Color3uint8 name="Color3uint8">4288848549</Color3uint8>
+						<PhysicalProperties name="CustomPhysicalProperties">
+							<CustomPhysics>false</CustomPhysics>
+						</PhysicalProperties>
+						<bool name="DefinesCapabilities">false</bool>
+						<bool name="EnableFluidForces">true</bool>
+						<float name="FrontParamA">-0.5</float>
+						<float name="FrontParamB">0.5</float>
+						<token name="FrontSurface">0</token>
+						<token name="FrontSurfaceInput">0</token>
+						<float name="LeftParamA">-0.5</float>
+						<float name="LeftParamB">0.5</float>
+						<token name="LeftSurface">0</token>
+						<token name="LeftSurfaceInput">0</token>
+						<bool name="Locked">false</bool>
+						<bool name="Massless">false</bool>
+						<token name="Material">256</token>
+						<string name="MaterialVariantSerialized"></string>
+						<string name="Name">StateScriptPart</string>
+						<CoordinateFrame name="PivotOffset">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>1</R22>
+						</CoordinateFrame>
+						<float name="Reflectance">0</float>
+						<float name="RightParamA">-0.5</float>
+						<float name="RightParamB">0.5</float>
+						<token name="RightSurface">0</token>
+						<token name="RightSurfaceInput">0</token>
+						<int name="RootPriority">0</int>
+						<Vector3 name="RotVelocity">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<float name="TopParamA">-0.5</float>
+						<float name="TopParamB">0.5</float>
+						<token name="TopSurface">10</token>
+						<token name="TopSurfaceInput">0</token>
+						<float name="Transparency">0.50009644</float>
+						<Vector3 name="Velocity">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+						</Vector3>
+						<token name="formFactorRaw">1</token>
+						<token name="shape">1</token>
+						<Vector3 name="size">
+							<X>1</X>
+							<Y>1</Y>
+							<Z>1</Z>
+						</Vector3>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="Part" referent="RBX47DBFDF8E43445C0A018243517F55EA6">
+				<Properties>
+					<bool name="Anchored">true</bool>
+					<BinaryString name="AttributesSerialize">AgAAAAQAAABJdGVtAgUAAABEcmlsbAMAAABUYWcCDAAAAEl0ZW1UZW1wbGF0ZQ==</BinaryString>
+					<bool name="AudioCanCollide">true</bool>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">10</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>-15.500001</X>
+						<Y>-13.5</Y>
+						<Z>-7.4999342</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">true</bool>
+					<bool name="CanQuery">true</bool>
+					<bool name="CanTouch">true</bool>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="CastShadow">false</bool>
+					<string name="CollisionGroup">Default</string>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4288848549</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<bool name="DefinesCapabilities">false</bool>
+					<bool name="EnableFluidForces">true</bool>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">256</token>
+					<string name="MaterialVariantSerialized"></string>
+					<string name="Name">ItemSpawn</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">10</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0.50009644</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">1</token>
+					<token name="shape">1</token>
+					<Vector3 name="size">
+						<X>1</X>
+						<Y>1</Y>
+						<Z>1</Z>
+					</Vector3>
+				</Properties>
+			</Item>
 		</Item>
 		<Item class="Folder" referent="RBX2039E7C839B444B4836634CE852C70E9">
 			<Properties>
@@ -2979,20 +3191,21 @@ AFNodWZmbGVGbG93ZXJzBAAAAFR5cGUCCwAAAFN0YXRlU2NyaXB0]]></BinaryString>
 				</Properties>
 				<Item class="BoolValue" referent="RBXD1DB01684A954EF2949C124DD0DA2712">
 					<Properties>
-						<BinaryString name="AttributesSerialize"><![CDATA[BgAAABEAAABEZWJ1Z0xpbmVWYXJpYWJsZQIHAAAAX0RlYnVnMQ0AAABEZWJ1Z1ZhcmlhYmxl
-AgcAAABfRGVidWcwAwAAAFJ1bgIBAAAAMQwAAABTY3JpcHRTb3VyY2UCXgIAAElOSVQgI1Bs
-YWNlbWVudCAwCklOSVQgI09mZnNldCAwCklOSVQgI0NvbG9yIFtbRkZGRkZGXV0KR09UTyBF
-bnRyeVBvaW50Cgo6QWRkQmxvY2sKUE9QICNDb2xvcgpTRVQgI1BsYWNlbWVudCBbI1BsYWNl
-bWVudCAqICNPZmZzZXRdCkNPUFlUTyBUb3dlckJhc2UgI1BsYWNlbWVudCBUb3dlclBhcnQg
-Q29sb3JIZXggI0NvbG9yClJFVFVSTgoKOkdldE5leHRDb2xvcgpXQUlURk9SIFtBZGRHcmVl
-biB8fCBBZGRSZWQgfHwgQWRkQmx1ZV0KR09UTyBOb3RHcmVlbiAhQWRkR3JlZW4KU0VUIEFk
-ZEdyZWVuIDAKUFVTSCBbWzAwQUEwMF1dClJFVFVSTgo6Tm90R3JlZW4KR09UTyBOb3RSZWQg
-IUFkZFJlZApTRVQgQWRkUmVkIDAKUFVTSCBbW0FBMDAwMF1dClJFVFVSTgo6Tm90UmVkClNF
-VCBBZGRCbHVlIDAKUFVTSCBbWzAwMDBBQV1dClJFVFVSTgoKOkVudHJ5UG9pbnQKCkNGUiAj
-UGxhY2VtZW50IFtbMCwgMSwgMF1dCkNGUkRFR1JFRVMgI09mZnNldCBbWzAsIDE1LCAwXV0K
-U0VUICNPZmZzZXQgWyNQbGFjZW1lbnQgKiAjT2Zmc2V0XQpDRlJDT1BZICNQbGFjZW1lbnQg
-VG93ZXJCYXNlCgo6TG9vcApDQUxMIEdldE5leHRDb2xvcgpDQUxMIEFkZEJsb2NrCkdPVE8g
-TG9vcAwAAABUcmlnZ2VyRXZlbnQCAAAAAAQAAABUeXBlAgsAAABTdGF0ZVNjcmlwdA==]]></BinaryString>
+						<BinaryString name="AttributesSerialize"><![CDATA[BwAAABEAAABEZWJ1Z0xpbmVWYXJpYWJsZQIHAAAAX0RlYnVnMQoAAABEZWJ1Z0xvZ0lkAgoA
+AABCbG9ja1Rvd2VyDQAAAERlYnVnVmFyaWFibGUCBwAAAF9EZWJ1ZzADAAAAUnVuAgEAAAAx
+DAAAAFNjcmlwdFNvdXJjZQJeAgAASU5JVCAjUGxhY2VtZW50IDAKSU5JVCAjT2Zmc2V0IDAK
+SU5JVCAjQ29sb3IgW1tGRkZGRkZdXQpHT1RPIEVudHJ5UG9pbnQKCjpBZGRCbG9jawpQT1Ag
+I0NvbG9yClNFVCAjUGxhY2VtZW50IFsjUGxhY2VtZW50ICogI09mZnNldF0KQ09QWVRPIFRv
+d2VyQmFzZSAjUGxhY2VtZW50IFRvd2VyUGFydCBDb2xvckhleCAjQ29sb3IKUkVUVVJOCgo6
+R2V0TmV4dENvbG9yCldBSVRGT1IgW0FkZEdyZWVuIHx8IEFkZFJlZCB8fCBBZGRCbHVlXQpH
+T1RPIE5vdEdyZWVuICFBZGRHcmVlbgpTRVQgQWRkR3JlZW4gMApQVVNIIFtbMDBBQTAwXV0K
+UkVUVVJOCjpOb3RHcmVlbgpHT1RPIE5vdFJlZCAhQWRkUmVkClNFVCBBZGRSZWQgMApQVVNI
+IFtbQUEwMDAwXV0KUkVUVVJOCjpOb3RSZWQKU0VUIEFkZEJsdWUgMApQVVNIIFtbMDAwMEFB
+XV0KUkVUVVJOCgo6RW50cnlQb2ludAoKQ0ZSICNQbGFjZW1lbnQgW1swLCAxLCAwXV0KQ0ZS
+REVHUkVFUyAjT2Zmc2V0IFtbMCwgMTUsIDBdXQpTRVQgI09mZnNldCBbI1BsYWNlbWVudCAq
+ICNPZmZzZXRdCkNGUkNPUFkgI1BsYWNlbWVudCBUb3dlckJhc2UKCjpMb29wCkNBTEwgR2V0
+TmV4dENvbG9yCkNBTEwgQWRkQmxvY2sKR09UTyBMb29wDAAAAFRyaWdnZXJFdmVudAIAAAAA
+BAAAAFR5cGUCCwAAAFN0YXRlU2NyaXB0]]></BinaryString>
 						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 						<bool name="DefinesCapabilities">false</bool>
 						<string name="Name">StateScript</string>
@@ -3685,6 +3898,12 @@ aAIKAAAAVGVzdFVwZGF0ZQ==]]></BinaryString>
 	parameter will be initialized as "5 + 3", not 8. Parameters do not need to be INIT - as long as the parameter is referenced
 	in the script, the state value will be allocated and intialized automatically.
 	
+	STATESCRIPTS VS STATESCRIPTPARTS
+	StateScripts and StateScriptParts are almost functionally identical. They support all the same command and attributes, but
+	StateScriptParts have one extra feature. The StateScriptPart's CFrame is automatically intialized as the #CFrame parameter
+	for that script. This can be useful if you have a script effect tied to a specific location, as you don't need to create an
+	extra prop to CFRCOPY it's location.
+	
 	FORMATTING
 	All commands follow a similar format:
 	CMD ARG1 ARG2 ARG3...
@@ -3696,9 +3915,15 @@ aAIKAAAAVGVzdFVwZGF0ZQ==]]></BinaryString>
 	examples above
 	
 	DEBUGGING
-	Two attributes are provided to assist with debugging, DebugVariable and DebugLineVariable. These will always output the 
-	current content of the line being run, and the line number of that line, respectively. If your script stops unexpectedly,
-	You can use these to figure out which line is causing the issue
+	For general debugging, you can use the DebugLogId attribute. When this attribute is set to a non-empty string, every
+	line executed by your script will be logged. Hit F9 to view these logs. For lines prefixed with * (preprocessed by the 
+	string parser) the post-processed string will be logged, meaning you can see what's substituted in/attempting to run.
+	Square brackets around arguments are removed, and arguments are separated by colons to help you see how the parser is
+	splitting/organizing arguments.
+	
+	Two other attributes are also provided to assist with debugging, DebugVariable and DebugLineVariable. These will always 
+	output the current content of the line being run, and the line number of that line, respectively. If the script stops
+	running unexpectedly, these will retain their last values.
 	
 	COMMANDS
 	
