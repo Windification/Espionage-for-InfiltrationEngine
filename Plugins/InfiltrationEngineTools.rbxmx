@@ -1,7 +1,7 @@
 <roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
 	<External>null</External>
 	<External>nil</External>
-	<Item class="Folder" referent="RBXEF594EA053F3492593A586E939643441">
+	<Item class="Folder" referent="RBX1B7C6EB230F4452792168531B82097AD">
 		<Properties>
 			<BinaryString name="AttributesSerialize"></BinaryString>
 			<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
@@ -10,1073 +10,168 @@
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
-		<Item class="Script" referent="RBX2843FD283B8D47EB8DD6A82BD97FCCD4">
+		<Item class="Folder" referent="RBX340B6C06BD6E48A985A9B51E837FA6A7">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 				<bool name="DefinesCapabilities">false</bool>
-				<bool name="Disabled">false</bool>
-				<Content name="LinkedSource"><null></null></Content>
-				<string name="Name">Main</string>
-				<token name="RunContext">0</token>
-				<string name="ScriptGuid">{76CA5A4A-91A1-4743-AC1B-22D61BB20098}</string>
-				<ProtectedString name="Source"><![CDATA[-- Infiltration Engine Tooling created by Cishshato
--- Modified by GhfjSpero
--- All Rights Reserved
-
-local toolbar = plugin:CreateToolbar("Infiltration Engine Tools")
-local MeadowMapButton = toolbar:CreateButton("Meadow Map", "Meadow Map", "rbxassetid://13749858361")
-local DoorAccessButton = toolbar:CreateButton("Door Access", "Door Access", "rbxassetid://72317736899762")
-local PropBarrierButton = toolbar:CreateButton("Prop Barrier", "Prop Barrier", "rbxassetid://119815023380659")
-local PropPreviewButton = toolbar:CreateButton("Prop Preview", "Prop Preview", "rbxassetid://129506771895350")
-local CombatMapButton = toolbar:CreateButton("Combat Flow Map", "Combat Flow Map", "rbxassetid://107812298422418")
-local ZoneMarkerButton = toolbar:CreateButton("Cell Marker", "Cell Editor", "rbxassetid://97000446266881")
-local PluginActive = false
-
-local MeadowMap = require(script.Parent.MeadowMap.Main)
-local DoorAccess = require(script.Parent.DoorAccess.Main)
-local PropBarrier = require(script.Parent.PropBarrier.Main)
-local PropPreview = require(script.Parent.PropPreview.Main)
-local CombatMap = require(script.Parent.CombatMap.Main)
-local ZoneMarker = require(script.Parent.ZoneMarker.Main)
-local CurrentPlugin = nil
-
-MeadowMapButton.Click:connect(function()
-	if CurrentPlugin ~= MeadowMap then
-		if CurrentPlugin then
-			CurrentPlugin.Clean()
-		end
-		CurrentPlugin = MeadowMap
-		plugin:Activate(true)
-		MeadowMap.Init(plugin:GetMouse())
-	else
-		plugin:Deactivate()
-	end
-end)
-
-DoorAccessButton.Click:connect(function()
-	if CurrentPlugin ~= DoorAccess then
-		if CurrentPlugin then
-			CurrentPlugin.Clean()
-		end
-		CurrentPlugin = DoorAccess
-		plugin:Activate(true)
-		CurrentPlugin.Init(plugin:GetMouse())
-	else
-		plugin:Deactivate()
-	end
-end)
-
-PropBarrierButton.Click:connect(function()
-	if CurrentPlugin ~= PropBarrier then
-		if CurrentPlugin then
-			CurrentPlugin.Clean()
-		end
-		CurrentPlugin = PropBarrier
-		plugin:Activate(true)
-		CurrentPlugin.Init(plugin:GetMouse())
-	else
-		plugin:Deactivate()
-	end
-end)
-
-PropPreviewButton.Click:connect(function()
-	if CurrentPlugin ~= PropPreview then
-		if CurrentPlugin then
-			CurrentPlugin.Clean()
-		end
-		CurrentPlugin = PropPreview
-		plugin:Activate(true)
-		CurrentPlugin.Init(plugin:GetMouse())
-	else
-		plugin:Deactivate()
-	end
-end)
-
-CombatMapButton.Click:connect(function()
-	if CurrentPlugin ~= CombatMap then
-		if CurrentPlugin then
-			CurrentPlugin.Clean()
-		end
-		CurrentPlugin = CombatMap
-		plugin:Activate(true)
-		CurrentPlugin.Init(plugin:GetMouse())
-	else
-		plugin:Deactivate()
-	end
-end)
-
-ZoneMarkerButton.Click:connect(function()
-	if CurrentPlugin ~= ZoneMarker then
-		if CurrentPlugin then
-			CurrentPlugin.Clean()
-		end
-		CurrentPlugin = ZoneMarker
-		plugin:Activate(true)
-		CurrentPlugin.Init(plugin:GetMouse())
-	else
-		plugin:Deactivate()
-	end
-end)
-
-local function disablePlugin()
-	PluginActive = false
-	MeadowMap.Clean()
-	DoorAccess.Clean()
-	PropBarrier.Clean()
-	PropPreview.Clean()
-	CombatMap.Clean()
-	ZoneMarker.Clean()
-	CurrentPlugin = nil
-end
-
-
-plugin.Unloading:connect(disablePlugin)
-plugin.Deactivation:connect(disablePlugin)]]></ProtectedString>
+				<string name="Name">CombatMap</string>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-		</Item>
-		<Item class="Folder" referent="RBX1E23D200D3B44C4EAC3227F31500CB22">
-			<Properties>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-				<bool name="DefinesCapabilities">false</bool>
-				<string name="Name">Util</string>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-			</Properties>
-			<Item class="ModuleScript" referent="RBX4935C2ABFFE54DB8961C4A9204CF6162">
+			<Item class="ModuleScript" referent="RBX18DED8B9683C4EA5AE71D710C339899A">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 					<bool name="DefinesCapabilities">false</bool>
 					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">AxisAlign</string>
-					<string name="ScriptGuid">{6417CF1B-EF13-4EDD-BC7A-A9F7809F7600}</string>
-					<ProtectedString name="Source"><![CDATA[local AxisAlign = {}
+					<string name="Name">Main</string>
+					<string name="ScriptGuid">{1E263F69-3E26-40ED-A91A-B7B237C51305}</string>
+					<ProtectedString name="Source"><![CDATA[local HttpService = game:GetService("HttpService")
+local VisibilityToggle = require(script.Parent.Parent.Util.VisibilityToggle)
 
-local VECTOR_UP = Vector3.new(0, 1, 0)
+local module = {}
 
-function AxisAlign.BestMatch(cfr, axis)
-	local comp = axis or VECTOR_UP
-	
-	local v0, v1, v2 = cfr:VectorToWorldSpace(VECTOR_UP), cfr:VectorToWorldSpace(Vector3.new(1, 0, 0)), cfr:VectorToWorldSpace(Vector3.new(0, 0, 1))
-	local d0, d1, d2 = v0:Dot(comp), v1:Dot(comp), v2:Dot(comp)
-	
-	if d0 < 0 then
-		d0 = -d0
-		v0 = -v0
-	end
-	if d1 < 0 then
-		d1 = -d1
-		v1 = -v1
-	end
-	if d2 < 0 then
-		d2 = -d2
-		v2 = -v2
-	end
-	
-	if d1 > d0 then
-		d1, d0 = d0, d1
-		v1, v0 = v0, v1
-	end
-	if d2 > d0 then
-		d2, d0 = d0, d2
-		v2, v0 = v0, v2
-	end
-	
-	return v0, v1, v2
+local DrawnModel = nil
+local ClickConnection = nil
+local CurrentMap = nil
+
+local BLUE = Color3.fromRGB(110, 153, 202)
+local BLACK = Color3.fromRGB(0, 0, 0)
+local WHITE = Color3.new(1, 1, 1)
+
+local function DrawLine(p0, p1, color)
+	local p = Instance.new("Part")
+	p.Size = Vector3.new(1, 1, (p0 - p1).Magnitude)
+	p.CFrame = CFrame.new((p0 + p1) / 2, p0)
+	p.Color = color
+	p.CastShadow = false
+	return p
 end
 
-function AxisAlign.CameraAlign(cfr, axis)
-	local _, v0, v1 = AxisAlign.BestMatch(cfr, axis)
-	
-	local cam = workspace.CurrentCamera.CFrame.LookVector
-	if math.abs(v1:Dot(cam)) > math.abs(v0:Dot(cam)) then
-		v0 = v1
+local function LinkId(id0, id1)
+	if id0 < id1 then
+		return id0 .. "|" .. id1
 	end
-	
-	local flat = Vector3.new(v0.X, 0, v0.Z).Unit
-	return flat, flat:Cross(VECTOR_UP)
+	return id1 .. "|" .. id0
 end
 
-return AxisAlign
+function module.Init(mouse: PluginMouse)
+	if module.Active then
+		return
+	end
+	module.Active = true
+
+	if workspace.DebugMission:FindFirstChild("CombatFlowMap") then
+		VisibilityToggle.TempReveal(workspace.DebugMission.CombatFlowMap)
+	end
+
+	local function RedrawMap(id)
+		if DrawnModel then
+			DrawnModel:Destroy()
+			DrawnModel = nil
+		end
+
+		DrawnModel = Instance.new("Model")
+		DrawnModel.Parent = workspace
+
+		local part = CurrentMap[id]
+		local used = {}
+		local blocked = part:GetAttribute("BlockedLinks") or "{}"
+		blocked = game:GetService("HttpService"):JSONDecode(blocked)
+
+		local FilteredLinks = {}
+
+		local distLeft = {
+			[id] = 3,
+		}
+		local expandFrom = { id }
+
+		while #expandFrom > 0 do
+			local checkId = expandFrom[1]
+			table.remove(expandFrom, 1)
+
+			local part = CurrentMap:FindFirstChild(checkId)
+			local linkTo = HttpService:JSONDecode(part:GetAttribute("LinkedIds"))
+
+			for _, targetId in linkTo do
+				local linkName = LinkId(checkId, targetId)
+
+				local linkPart = CurrentMap:FindFirstChild(targetId)
+				local p = DrawLine(part.Position, linkPart.Position, Color3.new(0, 0, 0.8), BLUE)
+				p.Parent = DrawnModel
+				p.Name = linkName
+
+				if blocked[linkName] then
+					p.Color = BLACK
+				else
+					table.insert(FilteredLinks, targetId)
+					if distLeft[checkId] > 1 and not distLeft[targetId] then
+						table.insert(expandFrom, targetId)
+					end
+				end
+				distLeft[targetId] = distLeft[checkId] - 1
+			end
+		end
+
+		part:SetAttribute("FilteredLinks", HttpService:JSONEncode(FilteredLinks))
+		part.Color = BLACK
+	end
+
+	ClickConnection = mouse.Button1Down:Connect(function(target)
+		local part = mouse.Target
+		if part:IsDescendantOf(workspace.DebugMission.CombatFlowMap) then
+			CurrentMap = part.Parent
+			for _, p in CurrentMap:GetChildren() do
+				p.Name = p:GetAttribute("Id")
+			end
+
+			local id = part:GetAttribute("Id")
+			game.Selection:Set({ part })
+
+			RedrawMap(id)
+		elseif part.Name:match("|") and #part.Name == 73 then
+			local node = game.Selection:Get()[1]
+			local blocked = node:GetAttribute("BlockedLinks") or "{}"
+			blocked = game:GetService("HttpService"):JSONDecode(blocked)
+
+			blocked[part.Name] = if not blocked[part.Name] then true else nil
+
+			node:SetAttribute("BlockedLinks", HttpService:JSONEncode(blocked))
+			RedrawMap(node.Name)
+		else
+			local id0, id1 = part.Name:match("|")
+
+			if DrawnModel then
+				DrawnModel:Destroy()
+				DrawnModel = nil
+			end
+		end
+	end)
+end
+
+function module.Clean()
+	if DrawnModel then
+		DrawnModel:Destroy()
+		DrawnModel = nil
+	end
+
+	if ClickConnection then
+		ClickConnection:Disconnect()
+		ClickConnection = nil
+	end
+
+	module.Active = false
+end
+
+return module
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="ModuleScript" referent="RBX3834371B8BA7410396F7CC304AA15CF3">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-					<bool name="DefinesCapabilities">false</bool>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">ZoneUtil</string>
-					<string name="ScriptGuid">{AF081865-7CA5-4567-874A-90F9F890447B}</string>
-					<ProtectedString name="Source"><![CDATA[local ZoneUtil = {}
-
-function ZoneUtil.InZone(zone, pos)
-	local floorMatch = zone:FindFirstChild("Floor") == nil
-	local roofMatch = false
-
-	for _, part in pairs(zone:GetChildren()) do
-		local rel = part.CFrame:PointToObjectSpace(pos)
-
-		if math.abs(rel.X) <= part.Size.X / 2 and math.abs(rel.Z) <= part.Size.Z / 2 then
-			if part.Name == "Roof" and rel.Y <= 0 then
-				roofMatch = true
-			elseif part.Name == "Floor" and rel.Y >= 0 then
-				floorMatch = true
-			end
-
-			if floorMatch and roofMatch then
-				return true
-			end
-		end
-	end
-	
-	return false
-end
-
-function ZoneUtil.GetZone(pos)
-	local LevelBase = workspace:FindFirstChild("DebugMission") or workspace:FindFirstChild("Level")
-	for _, zone in pairs(LevelBase.Cells:GetChildren()) do
-		if ZoneUtil.InZone(zone, pos) then
-			return zone
-		end
-	end
-end
-
-return ZoneUtil]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
-			<Item class="ModuleScript" referent="RBXB6BC1B7E8C0E4925ADFF6C990A546529">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-					<bool name="DefinesCapabilities">false</bool>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">Actor</string>
-					<string name="ScriptGuid">{4AAE16C4-56F2-4FAA-865D-FD089B9EA563}</string>
-					<ProtectedString name="Source"><![CDATA[local module = {
-	Create = require(script._ActorCreation._Create),
-
-	State = require(script._ActorState._State),
-	Derived = require(script._ActorState._Derived),
-	DerivedTable = require(script._ActorState._DerivedTable),
-	Watch = require(script._ActorState._Watch),
-
-	Spring = require(script._ActorAnim._ActorSpring),
-	Cubic = require(script._ActorAnim._Cubic),
-
-	OnChange = require(script._OnChange),
-}
-
-return module]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-				<Item class="Folder" referent="RBX034622FAEABF4F2E9C0A8BBFEA96FA99">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-						<bool name="DefinesCapabilities">false</bool>
-						<string name="Name">_ActorAnim</string>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-					<Item class="ModuleScript" referent="RBX128C32235B17446794544418394C2EF8">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-							<bool name="DefinesCapabilities">false</bool>
-							<Content name="LinkedSource"><null></null></Content>
-							<string name="Name">_ActorSpring</string>
-							<string name="ScriptGuid">{7C734954-43C3-4EA0-B1C2-D76A45631A55}</string>
-							<ProtectedString name="Source"><![CDATA[local AnimRunner = require(script.Parent._Anim)
-
-local numberClose = function(x, y)
-	return math.abs(x - y) < 0.01
-end
-local vectorClose = function(x, y)
-	return (x - y).magnitude < 0.01
-end
-local udim2Close = function(x, y)
-	local rel = x - y
-	return math.abs(rel.X.Offset) <= 1 and math.abs(rel.Y.Offset) <= 1 and math.abs(rel.X.Scale) < 0.01 and math.abs(rel.Y.Scale) < 0.01 
-end
-
-local function getStartingVelocityByType(value)
-	if typeof(value) == "number" then
-		return 0, numberClose
-	elseif typeof(value) == "Vector3" then
-		return Vector3.new(), vectorClose
-	--elseif typeof(value) == "UDim2" then
-	--	return UDim2.new(), udim2Close
-	end
-end
-
-local Spring = {
-	_Update = function(self)
-		self.T = self._Follow._Value
-		if self._Active then return true end
-		AnimRunner:Start(self)
-	end,
-	_Step = function(self, dt)
-		if self._IsClose(self._Value, self.T) then
-			self._Value = self.T
-			return true
-		end
-		if dt > 0.03 then dt = 0.03 end
-		local accel = (self.T - self._Value) * self._Force - self.V * self._Damping
-		local vel = self.V
-		self.V = self.V + accel * dt * self._Speed
-		self._Value = self._Value + (self.V + vel) * dt * 0.5 * self._Speed
-		return false
-	end,
-	_GetDependencies = function(self)
-		return { self._Follow }
-	end,
-	_Init = function(self)
-		if self._Initialized then return end
-		self._Initialized = true
-		self._Follow._Dependent[self] = true
-		if self._Follow._Init then
-			self._Follow:_Init()
-		end
-		self._Value = self._Follow._Value -- Position
-		self.T = self._Follow._Value -- Target
-		self.V, self._IsClose = getStartingVelocityByType(self._Follow._Value)
-	end
-}
-Spring.__index = Spring
-
-return function(follow, force, damping, speed)
-	local self = {}
-	self._StateType = "_Spring"
-	self._Active = false
-	self._Follow = follow
-	self._Force = force or 50
-	self._Damping = damping or 10
-	self._Speed = speed or 1
-	self._Temp = follow._Temp
-
-	self._Priority = follow._Priority + 1
-	self._Dependent = {}
-	self._Link = {}
-
-	setmetatable(self, Spring)
-	return self
-end]]></ProtectedString>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-					<Item class="ModuleScript" referent="RBX9368151F96E74EFFAD74F7D1B1914A4B">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-							<bool name="DefinesCapabilities">false</bool>
-							<Content name="LinkedSource"><null></null></Content>
-							<string name="Name">_Anim</string>
-							<string name="ScriptGuid">{15366EAE-967C-4C2F-8DB0-B9E9C3ED9799}</string>
-							<ProtectedString name="Source"><![CDATA[local RunService = game:GetService("RunService")
-local Update = require(script.Parent.Parent._ActorState._Update)
-
-local Anim = {}
-Anim._List = {}
-Anim._Active = false
-
-function Anim:Start(data)
-	self._List[data] = true
-	data._Active = true
-	if self._Active then return end
-	self._Active = true
-	self._StepEvent = RunService.RenderStepped:Connect(function(dt)
-		for data in pairs(self._List) do
-			if data:_Step(dt) then
-				self._List[data] = nil
-				data._Active = false
-			end
-			Update(data)
-		end
-		if not next(self._List) then
-			self._Active = false
-			self._StepEvent:Disconnect()
-			self._StepEvent = nil
-		end
-	end)
-end
-
-return Anim]]></ProtectedString>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-					<Item class="ModuleScript" referent="RBXF4D62D0B3FD24C3093CE45A68CB9B6C0">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-							<bool name="DefinesCapabilities">false</bool>
-							<Content name="LinkedSource"><null></null></Content>
-							<string name="Name">_Cubic</string>
-							<string name="ScriptGuid">{A4A39EB2-DAEE-46F4-B5DB-BF7F057E8C63}</string>
-							<ProtectedString name="Source"><![CDATA[local DEFAULT_LINEAR_TRANSITION_RATE = 4
-
-local AnimRunner = require(script.Parent.Parent._ActorAnim._Anim)
-
-local Cubic = {
-	_Update = function(self)
-		self.T = self._Follow._Value
-		if self._Active then return true end
-		AnimRunner:Start(self)
-	end,
-	_Step = function(self, dt)
-		local shift = dt * self._Speed
-		local done = false
-		if math.abs(self.T - self.P) < shift then
-			self.P = self.T
-			done = true
-		elseif self.P < self.T then
-			self.P += shift
-		else
-			self.P -= shift
-		end
-		local a = self.P
-		self._Value = a * a * (-2 * a + 3)
-		return done
-	end,
-	_GetDependencies = function(self)
-		return { self._Follow }
-	end,
-	_Init = function(self)
-		if self._Initialized then return end
-		self._Initialized = true
-		self._Follow._Dependent[self] = true
-		if self._Follow._Init then
-			self._Follow:_Init()
-		end
-		local a = self._Follow._Value
-		self.P = a -- Position
-		self.T = a -- Target
-		self._Value = a * a * (-2 * a + 3)
-	end
-}
-Cubic.__index = Cubic
-
-return function(follow, speed)
-	local self = {}
-	self._StateType = "_Cubic"
-	self._Active = false
-	self._Follow = follow
-	self._Speed =  DEFAULT_LINEAR_TRANSITION_RATE
-	if speed then
-		self._Speed = self._Speed * speed
-	end
-	self._Temp = follow._Temp
-
-	self._Priority = follow._Priority + 1
-	self._Dependent = {}
-	self._Link = {}
-
-	setmetatable(self, Cubic)
-	return self
-end]]></ProtectedString>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-					<Item class="ModuleScript" referent="RBX39FEA60AF25243249D3140A107853C4C">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-							<bool name="DefinesCapabilities">false</bool>
-							<Content name="LinkedSource"><null></null></Content>
-							<string name="Name">_Linear</string>
-							<string name="ScriptGuid">{C807AC4F-EA30-44F1-B48A-AE7ADB1D766D}</string>
-							<ProtectedString name="Source"><![CDATA[local DEFAULT_LINEAR_TRANSITION_RATE = 4
-
-local AnimRunner = require(script.Parent.Parent._ActorAnim._Anim)
-
-local Cubic = {
-	_Update = function(self)
-		self.T = self._Follow._Value
-		if self._Active then return true end
-		AnimRunner:Start(self)
-	end,
-	_Step = function(self, dt)
-		local shift = dt * self._Speed
-		local done = false
-		if math.abs(self.T - self.P) < shift then
-			self.P = self.T
-			done = true
-		elseif self.P < self.T then
-			self.P += shift
-		else
-			self.P -= shift
-		end
-		local a = self.P
-		self._Value = a * a * (-2 * a + 3)
-		return done
-	end,
-	_GetDependencies = function(self)
-		return { self._Follow }
-	end,
-	_Init = function(self)
-		if self._Initialized then return end
-		self._Initialized = true
-		self._Follow._Dependent[self] = true
-		if self._Follow._Init then
-			self._Follow:_Init()
-		end
-		local a = self._Follow._Value
-		self.P = a -- Position
-		self.T = a -- Target
-		self._Value = a * a * (-2 * a + 3)
-	end
-}
-Cubic.__index = Cubic
-
-return function(follow, speed)
-	local self = {}
-	self._StateType = "_Cubic"
-	self._Active = false
-	self._Follow = follow
-	self._Speed =  DEFAULT_LINEAR_TRANSITION_RATE
-	if speed then
-		self._Speed = self._Speed * speed
-	end
-	self._Temp = follow._Temp
-
-	self._Priority = follow._Priority + 1
-	self._Dependent = {}
-	self._Link = {}
-
-	setmetatable(self, Cubic)
-	return self
-end]]></ProtectedString>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-				</Item>
-				<Item class="Folder" referent="RBX048F627A39F8424283C3798D43AE221B">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-						<bool name="DefinesCapabilities">false</bool>
-						<string name="Name">_ActorCreation</string>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-					<Item class="ModuleScript" referent="RBX48E0D4A471CC424C899951BCF9BB701E">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-							<bool name="DefinesCapabilities">false</bool>
-							<Content name="LinkedSource"><null></null></Content>
-							<string name="Name">_Create</string>
-							<string name="ScriptGuid">{81AE2EEE-2F43-42EB-9E58-F587F2330041}</string>
-							<ProtectedString name="Source"><![CDATA[local TABLE = "table"
-local SCRIPT_SIGNAL = "RBXScriptSignal"
-local INST = "Instance"
-local DEBUG = "Debug"
-local TEMP_STATE = "TempState"
-
-local HandleStateCleanup = require(script.Parent:WaitForChild("_HandleStateCleanup"))
-
-
-local function processChildren(parent, item, stateLink)
-	if typeof(item) == INST then
-		item.Parent = parent
-		return
-	end
-	if item._DerivedTable then
-		item:_Init()
-		item.OnAdd = function(_, instance)
-			if typeof(instance) == INST then
-				instance.Parent = parent
-			end
-		end
-		item.OnRemove = function(_, instance)
-			if typeof(instance) == INST then
-				instance:Destroy()
-			end
-		end
-		for _, instance in pairs(item._Value) do
-			if typeof(instance) == INST then
-				instance.Parent = parent
-			end
-		end
-		if stateLink then
-			table.insert(stateLink, item)
-		end
-	else
-		for _, c in pairs(item) do
-			processChildren(parent, c, stateLink)
-		end
-	end
-end
-
-return function(className, props, children, autoCleanup)
-	local instance = Instance.new(className)
-
-	local stateLink
-	if autoCleanup then
-		stateLink = {}
-	end
-
-	for name, value in pairs(props) do
-		if name == DEBUG or name == TEMP_STATE then continue end
-
-		if typeof(value) == TABLE then
-			if value._StateType then
-				value._Link[instance] = name
-				if value._Init then
-					value:_Init()
-				end
-				instance[name] = value._Value
-				if autoCleanup then
-					table.insert(stateLink, value)
-				end
-			end
-		elseif typeof(name) == TABLE then
-			if name._OnChange then
-				local propName = name._Property
-				instance:GetPropertyChangedSignal(propName):Connect(function() value(instance[propName]) end)
-				value(props[propName] or instance[propName])
-			end
-		elseif typeof(instance[name]) == SCRIPT_SIGNAL then
-			instance[name]:Connect(value)
-		else
-			instance[name] = value
-		end
-	end
-
-	if children then
-		processChildren(instance, children, autoCleanup and stateLink)
-	end
-
-	if autoCleanup and next(stateLink) then
-		instance.AncestryChanged:Connect(function()
-			if instance.Parent == nil then
-				if props.Debug then
-					warn("Cleanup:", props.Debug, stateLink)
-				end
-				for _, dep in pairs(stateLink) do
-					dep._Link[instance] = nil
-					HandleStateCleanup(dep)
-				end
-			end
-		end)
-	end
-
-	return instance
-end]]></ProtectedString>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-					<Item class="ModuleScript" referent="RBX33585122637A462B98FB60542679BB75">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-							<bool name="DefinesCapabilities">false</bool>
-							<Content name="LinkedSource"><null></null></Content>
-							<string name="Name">_HandleStateCleanup</string>
-							<string name="ScriptGuid">{6EDD3052-8459-4715-942B-C2E21EA1F01C}</string>
-							<ProtectedString name="Source"><![CDATA[local cleanup
-cleanup = function(state)
-	if state.Debug then
-		warn(state.Debug, state._Temp, state._GetDependencies ~= nil, next(state._Dependent), next(state._Link))
-	end
-	if not state._Persist and state._GetDependencies and not next(state._Dependent) and not next(state._Link) then
-		if state.Debug then
-			warn("Cleanup", state.Debug, state:_GetDependencies())
-		end
-		state._Initialized = false
-		for _, dep in pairs(state:_GetDependencies()) do
-			dep._Dependent[state] = nil
-			cleanup(dep)
-		end
-	end
-end
-
-return cleanup]]></ProtectedString>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-				</Item>
-				<Item class="Folder" referent="RBX75BC61BE8B8743BA819E6A11F1EAF6EF">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-						<bool name="DefinesCapabilities">false</bool>
-						<string name="Name">_ActorState</string>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-					<Item class="ModuleScript" referent="RBX8DF0EFF7D56B44D3B7B2BB2E8AA3ADEE">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-							<bool name="DefinesCapabilities">false</bool>
-							<Content name="LinkedSource"><null></null></Content>
-							<string name="Name">_Derived</string>
-							<string name="ScriptGuid">{42737218-15E6-41F5-AA86-C764955EC78E}</string>
-							<ProtectedString name="Source"><![CDATA[local Derived = {
-	_Update = function(self)
-		local values = {}
-		for k, v in pairs(self._Dependencies) do
-			values[k] = v._Value or false
-		end
-		local newValue = self._Eval(unpack(values))
-		if newValue ~= self._Value then
-			self._Value = newValue
-			return true
-		end
-		return false
-	end,
-	_GetDependencies = function(self)
-		return self._Dependencies
-	end,
-	_Init = function(self)
-		if self._Initialized then return end
-		self._Initialized = true
-		for _, v in pairs(self._Dependencies) do
-			v._Dependent[self] = true
-			if v._Init then
-				v:_Init()
-			end
-		end
-		self:_Update()
-	end
-}
-Derived.__index = Derived
-
-return function(eval, ...)
-	local self = {}
-	self._StateType = "_Derived"
-	self._Eval = eval
-	self._Dependencies = {...}
-
-	local priority = 0
-	local temp = false
-	for k, v in pairs(self._Dependencies) do
-		priority = math.max(priority, v._Priority)
-		temp = temp or v._Temp
-	end
-
-	self._Priority = priority + 1
-	self._Temp = temp
-
-	self._Dependent = {}
-	self._Link = {}
-
-	setmetatable(self, Derived)
-	return self
-end]]></ProtectedString>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-					<Item class="ModuleScript" referent="RBXC6203142271846B6A14369F71A31FE1A">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-							<bool name="DefinesCapabilities">false</bool>
-							<Content name="LinkedSource"><null></null></Content>
-							<string name="Name">_DerivedTable</string>
-							<string name="ScriptGuid">{FC3D88F0-37BE-4944-AB3C-7DBA4DE0DBAB}</string>
-							<ProtectedString name="Source"><![CDATA[local DerivedTable = {
-	_Update = function(self)
-		local changed = false
-		local input = self._Input._Value
-
-		for k, v in pairs(input) do
-			local li = self._LastInput[k]
-			if v ~= li then
-				changed = true
-				if li and self.OnRemove then
-					self.OnRemove(k, self._Value[k])
-				end
-				self._LastInput[k] = v
-				self._Value[k] = self._Eval(k, v)
-				if self.OnAdd then
-					self.OnAdd(k, self._Value[k])
-				end
-			end
-		end
-
-		for k, v in pairs(self._LastInput) do
-			if not input[k] then
-				if self.OnRemove then
-					self.OnRemove(k, self._Value[k])
-				end
-				self._LastInput[k] = nil
-				changed = true
-			end
-		end
-
-		return changed
-	end,
-	_GetDependencies = function(self)
-		return { self._Input }
-	end,
-	_Init = function(self)
-		if self._Initialized then return end
-		self._Initialized = true
-		self._Input._Dependent[self] = true
-		if self._Input._Init then
-			self._Input:_Init()
-		end
-		self:_Update()
-	end
-}
-DerivedTable.__index = DerivedTable
-
-return function(eval, input, onAdd, onRemove)
-	local self = {}
-	self._StateType = "_DerivedTable"
-	self._DerivedTable = true
-	self._Eval = eval
-	self._Value = {}
-	self._LastInput = {}
-	self._Input = input
-	self._Temp = input._Temp
-	self._Priority = input._Priority + 1
-
-	self.OnAdd = onAdd
-	self.OnRemove = onRemove
-
-	self._Dependent = {}
-	self._Link = {}
-
-	setmetatable(self, DerivedTable)
-	return self
-end]]></ProtectedString>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-					<Item class="ModuleScript" referent="RBXA00AD1A6382948FDB0944181F6B737F6">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-							<bool name="DefinesCapabilities">false</bool>
-							<Content name="LinkedSource"><null></null></Content>
-							<string name="Name">_State</string>
-							<string name="ScriptGuid">{FB20455A-987F-4628-8B50-E8257BD902F4}</string>
-							<ProtectedString name="Source"><![CDATA[local Update = require(script.Parent:WaitForChild("_Update"))
-
-local State = {
-	set = function(self, value)
-		if self._Value == value then return end
-		self._Value = value
-		Update(self)
-	end
-}
-State.__index = State
-
-return function(value)
-	local self = {}
-	self._StateType = "_State"
-	self._State = true
-	self._Value = value
-	self._Priority = 0
-	self._Dependent = {}
-	self._Link = {}
-	self._Temp = false
-	--setmetatable(self._Link, WEAK_KEYS)
-
-	setmetatable(self, State)
-	return self
-end]]></ProtectedString>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-					<Item class="ModuleScript" referent="RBX1719486E38BC4E77A51BC3A8E8DAFA6B">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-							<bool name="DefinesCapabilities">false</bool>
-							<Content name="LinkedSource"><null></null></Content>
-							<string name="Name">_Update</string>
-							<string name="ScriptGuid">{7A196423-CA46-4C0E-831A-62A20421A510}</string>
-							<ProtectedString name="Source"><![CDATA[return function(base)
-	local list = {}
-
-	for instance, prop in pairs(base._Link) do
-		instance[prop] = base._Value
-	end
-
-	for dep in pairs(base._Dependent) do
-		list[dep] = true
-	end
-
-	local best = next(list)
-	while best do
-		local priority = best._Priority
-		for dep in pairs(list) do
-			if dep._Priority < priority then
-				best = dep
-				priority = best._Priority
-			end
-		end
-		list[best] = nil
-
-		if best:_Update() then -- this updated and we need to change it's dependencies
-			for instance, prop in pairs(best._Link) do
-				instance[prop] = best._Value
-			end
-			for dep in pairs(best._Dependent) do
-				list[dep] = true
-			end
-		end
-
-		best = next(list)
-	end
-end]]></ProtectedString>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-					<Item class="ModuleScript" referent="RBX1675B09842C24A07B443DD26372F369A">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-							<bool name="DefinesCapabilities">false</bool>
-							<Content name="LinkedSource"><null></null></Content>
-							<string name="Name">_Watch</string>
-							<string name="ScriptGuid">{4F1025B2-3382-4E16-A637-95415A303E8A}</string>
-							<ProtectedString name="Source"><![CDATA[local Watch = {
-	_Update = function(self)
-		local values = {}
-		for k, v in pairs(self._Dependencies) do
-			values[k] = v._Value or false
-		end
-		-- Make Watch Callback
-        self._Eval(unpack(values))
-		return false
-	end,
-	_GetDependencies = function(self)
-		return self._Dependencies
-	end,
-	_Init = function(self)
-		if self._Initialized then return end
-		self._Initialized = true
-		for _, v in pairs(self._Dependencies) do
-			v._Dependent[self] = true
-			if v._Init then
-				v:_Init()
-			end
-		end
-		self:_Update()
-	end
-}
-Watch.__index = Watch
-
-return function(eval, ...)
-	local self = {}
-	self._StateType = "_Watch"
-	self._Eval = eval
-	self._Dependencies = {...}
-
-	local priority = 0
-	local temp = false
-	for k, v in pairs(self._Dependencies) do
-		priority = math.max(priority, v._Priority)
-		temp = temp or v._Temp
-	end
-
-	self._Priority = priority + 1
-	self._Temp = temp
-
-	self._Dependent = {}
-	self._Link = {}
-
-	setmetatable(self, Watch)
-
-    -- Unlike other state components, we want to init this one immediataly as it will never connect to an instance
-    -- Any dependencies will never be released, only use this for debugging or if you're sure those state components don't need to be gced
-    self:_Init()
-
-	return self
-end]]></ProtectedString>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-				</Item>
-				<Item class="ModuleScript" referent="RBX72D675F5070E4F22B560BDD086212799">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-						<bool name="DefinesCapabilities">false</bool>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">_OnChange</string>
-						<string name="ScriptGuid">{DA386549-A71C-4A20-ABA5-6BF4F677389D}</string>
-						<ProtectedString name="Source"><![CDATA[return function(prop)
-	return {
-		_OnChange = true,
-		_Property = prop,
-	}
-end]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-			</Item>
-			<Item class="ModuleScript" referent="RBX8E852D28A09F4CA8B23BE076B1217E52">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-					<bool name="DefinesCapabilities">false</bool>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">Button</string>
-					<string name="ScriptGuid">{F6BD6529-CCA9-4C8B-BFB4-D08A04EF9CD4}</string>
-					<ProtectedString name="Source"><![CDATA[local Actor = require(script.Parent.Actor)
-local Create = Actor.Create
-local State = Actor.State
-local Derived = Actor.Derived
-
-return function(props)
-	local enabled = props.Enabled or State(false)
-	
-	return Create("TextButton", {
-		BorderSizePixel = 0,
-		Size = props.Size or UDim2.new(0, 200, 0, 40),
-		Text = props.Text,
-		BackgroundTransparency = Derived(function(e)
-			return e and 0 or 0.5
-		end, enabled),
-		BackgroundColor3 = Derived(function(e)
-			return e and Color3.new(1, 1, 1) or Color3.new(0, 0, 0)
-		end, enabled),
-		TextColor3 = Derived(function(e)
-			return e and Color3.new(0, 0, 0) or Color3.new(1, 1, 1)
-		end, enabled),
-		
-		TextSize = 20,
-		Font = Enum.Font.SciFi,
-		
-		Activated = props.Activated,
-		Position = props.Position,
-		AnchorPoint = props.AnchorPoint
-	})
-end]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
 		</Item>
-		<Item class="Folder" referent="RBX7C87E768B50F4961B8C615D13CAAE7B8">
+		<Item class="Folder" referent="RBX0857553082834D3D834ECBF3A5F2FC5D">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
@@ -1085,14 +180,14 @@ end]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBX4E7EF284A41D4E698D82FDD4C1E8B5C4">
+			<Item class="ModuleScript" referent="RBX443F8B5C210A4D8E9A243CED355AE07A">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 					<bool name="DefinesCapabilities">false</bool>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Main</string>
-					<string name="ScriptGuid">{6211920E-7411-43F8-9F73-78E84EF054CF}</string>
+					<string name="ScriptGuid">{57C60FA1-8AF6-4C55-8641-262A35141BEC}</string>
 					<ProtectedString name="Source"><![CDATA[--!strict
 
 local UserInputService = game:GetService("UserInputService")
@@ -1484,7 +579,482 @@ return module
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="Folder" referent="RBXD84B4656374D44C0AB053B0FDD7D6C2F">
+		<Item class="Script" referent="RBX80E775FA39BD4F9B97257E945D1C2148">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+				<bool name="DefinesCapabilities">false</bool>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">Main</string>
+				<token name="RunContext">0</token>
+				<string name="ScriptGuid">{B3EFEE37-7648-4409-8167-B278C1F457CB}</string>
+				<ProtectedString name="Source"><![CDATA[-- Infiltration Engine Tooling created by Cishshato
+-- Modified by GhfjSpero
+-- All Rights Reserved
+
+local toolbar = plugin:CreateToolbar("Infiltration Engine Tools")
+local MeadowMapButton = toolbar:CreateButton("Meadow Map", "Meadow Map", "rbxassetid://13749858361")
+local DoorAccessButton = toolbar:CreateButton("Door Access", "Door Access", "rbxassetid://72317736899762")
+local PropBarrierButton = toolbar:CreateButton("Prop Barrier", "Prop Barrier", "rbxassetid://119815023380659")
+local PropPreviewButton = toolbar:CreateButton("Prop Preview", "Prop Preview", "rbxassetid://129506771895350")
+local CombatMapButton = toolbar:CreateButton("Combat Flow Map", "Combat Flow Map", "rbxassetid://107812298422418")
+local ZoneMarkerButton = toolbar:CreateButton("Cell Marker", "Cell Editor", "rbxassetid://97000446266881")
+local SectionVisibilityButton =
+	toolbar:CreateButton("Section Visibility", "Section Visibility", "rbxassetid://8753176416")
+
+local MeadowMap = require(script.Parent.MeadowMap.Main)
+local DoorAccess = require(script.Parent.DoorAccess.Main)
+local PropBarrier = require(script.Parent.PropBarrier.Main)
+local PropPreview = require(script.Parent.PropPreview.Main)
+local CombatMap = require(script.Parent.CombatMap.Main)
+local ZoneMarker = require(script.Parent.ZoneMarker.Main)
+local SectionVisibility = require(script.Parent.SectionVisibility.Main)
+local CurrentPlugin = nil
+
+local VisibilityToggle = require(script.Parent.Util.VisibilityToggle)
+
+MeadowMapButton.Click:connect(function()
+	if CurrentPlugin ~= MeadowMap then
+		if CurrentPlugin then
+			CurrentPlugin.Clean()
+		end
+		CurrentPlugin = MeadowMap
+		plugin:Activate(true)
+		MeadowMap.Init(plugin:GetMouse())
+	else
+		plugin:Deactivate()
+	end
+end)
+
+DoorAccessButton.Click:connect(function()
+	if CurrentPlugin ~= DoorAccess then
+		if CurrentPlugin then
+			CurrentPlugin.Clean()
+		end
+		CurrentPlugin = DoorAccess
+		plugin:Activate(true)
+		CurrentPlugin.Init(plugin:GetMouse())
+	else
+		plugin:Deactivate()
+	end
+end)
+
+PropBarrierButton.Click:connect(function()
+	if CurrentPlugin ~= PropBarrier then
+		if CurrentPlugin then
+			CurrentPlugin.Clean()
+		end
+		CurrentPlugin = PropBarrier
+		plugin:Activate(true)
+		CurrentPlugin.Init(plugin:GetMouse())
+	else
+		plugin:Deactivate()
+	end
+end)
+
+PropPreviewButton.Click:connect(function()
+	if CurrentPlugin ~= PropPreview then
+		if CurrentPlugin then
+			CurrentPlugin.Clean()
+		end
+		CurrentPlugin = PropPreview
+		plugin:Activate(true)
+		CurrentPlugin.Init(plugin:GetMouse())
+	else
+		plugin:Deactivate()
+	end
+end)
+
+CombatMapButton.Click:connect(function()
+	if CurrentPlugin ~= CombatMap then
+		if CurrentPlugin then
+			CurrentPlugin.Clean()
+		end
+		CurrentPlugin = CombatMap
+		plugin:Activate(true)
+		CurrentPlugin.Init(plugin:GetMouse())
+	else
+		plugin:Deactivate()
+	end
+end)
+
+ZoneMarkerButton.Click:connect(function()
+	if CurrentPlugin ~= ZoneMarker then
+		if CurrentPlugin then
+			CurrentPlugin.Clean()
+		end
+		CurrentPlugin = ZoneMarker
+		plugin:Activate(true)
+		CurrentPlugin.Init(plugin:GetMouse())
+	else
+		plugin:Deactivate()
+	end
+end)
+
+SectionVisibilityButton.Click:Connect(function()
+	plugin:Deactivate()
+	SectionVisibility.OpenMenu(plugin)
+	plugin:Deactivate()
+end)
+
+local function disablePlugin()
+	MeadowMap.Clean()
+	DoorAccess.Clean()
+	PropBarrier.Clean()
+	PropPreview.Clean()
+	CombatMap.Clean()
+	ZoneMarker.Clean()
+	VisibilityToggle.HideTempRevealedParts(workspace:FindFirstChild("DebugMission"))
+	CurrentPlugin = nil
+end
+
+plugin.Unloading:connect(disablePlugin)
+plugin.Deactivation:connect(disablePlugin)
+]]></ProtectedString>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+		</Item>
+		<Item class="Folder" referent="RBX24878FFA355D4DA2A9BFC2F64EDDE2C0">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+				<bool name="DefinesCapabilities">false</bool>
+				<string name="Name">MeadowMap</string>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+			<Item class="ModuleScript" referent="RBXB4325BB5AA1049A3BDB23437F7CC0D6B">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">Main</string>
+					<string name="ScriptGuid">{869A2656-2B65-4290-B8D8-361286DD1B6E}</string>
+					<ProtectedString name="Source"><![CDATA[local HttpService = game:GetService("HttpService")
+
+local AxisAlign = require(script.Parent.Parent.Util.AxisAlign)
+local ZoneUtil = require(script.Parent.Parent.Util.ZoneUtil)
+local VisibilityToggle = require(script.Parent.Parent.Util.VisibilityToggle)
+
+local UserInputService = game:GetService("UserInputService")
+local UserInputConnection
+
+local DOOR_BUFFER = 4.5
+
+local CurrentZone = nil
+local CurrentMap = {}
+local CurrentModel = nil
+local LinkWith = nil
+
+local function CloseZone()
+	if CurrentModel then
+		CurrentModel:Destroy()
+		CurrentModel = nil
+	end
+	CurrentMap = {}
+	CurrentZone = nil
+end
+
+local function CheckLOS(p0, p1)
+	if p0 == p1 then return false end
+	local result = workspace:Raycast(p0.Position + Vector3.new(0, 0.75, 0), p1.Position - p0.Position)
+	return not result or result.Instance == p1
+end
+
+local function AddLink(p0, p1)
+	local l0 = Instance.new("Part")
+	l0.Size = Vector3.new(0.4, 0.4, (p0.Position - p1.Position).magnitude / 2)
+	l0.Transparency = 0.5
+	local l1 = l0:Clone()
+	
+	l0.CFrame = CFrame.new(p0.Position * 0.75 + p1.Position * 0.25, p0.Position)
+	if not CurrentMap[p0][p1] then
+		CurrentMap[p0][p1] = l0
+		l0.BrickColor = BrickColor.new("Bright blue")
+		l0.Parent = CurrentModel
+	end
+	
+	l1.CFrame = CFrame.new(p1.Position * 0.75 + p0.Position * 0.25, p1.Position)
+	if not CurrentMap[p1][p0] then
+		CurrentMap[p1][p0] = l1
+		l1.BrickColor = BrickColor.new("Bright blue")
+		l1.Parent = CurrentModel
+	end
+end
+
+local function AddOneWayLink(p0, p1)
+	local l0 = Instance.new("Part")
+	l0.Size = Vector3.new(0.4, 0.4, (p0.Position - p1.Position).magnitude / 2)
+	l0.Transparency = 0.5
+
+	l0.CFrame = CFrame.new(p0.Position * 0.75 + p1.Position * 0.25, p0.Position)
+	if not CurrentMap[p0][p1] then
+		CurrentMap[p0][p1] = l0
+		l0.BrickColor = BrickColor.new("Bright blue")
+		l0.Parent = CurrentModel
+	end
+end
+
+local function CreateNode(pos, placed, generateLinks)
+	if placed and not ZoneUtil.InZone(CurrentZone, pos) then
+		warn("Nodes should not be placed outside of their cell")
+		return
+	end
+
+	local p = Instance.new("Part")
+	p.Size = Vector3.new(2, 2, 2)
+	p.Parent = CurrentModel
+	p.CFrame = CFrame.new(pos)
+	p.BrickColor = BrickColor.new("Bright blue")
+	if placed then p.Transparency = 0.5 end
+	CurrentMap[p] = {}
+	if generateLinks then
+		for node in pairs(CurrentMap) do
+			if node ~= p and CheckLOS(node, p) then
+				AddLink(node, p)
+			end
+		end
+	end
+	return p
+end
+
+local function OpenZone(newZone)
+	if CurrentZone then
+		CloseZone()
+	end
+
+	local DoorNodes = {}
+	for _, prop in pairs(workspace.DebugMission.Props:GetChildren()) do
+		if prop.Name:match("Door") then
+			local p0 = (prop.CFrame * CFrame.new(0, -3, DOOR_BUFFER)).p
+			local p1 = (prop.CFrame * CFrame.new(0, -3, -DOOR_BUFFER)).p
+			if ZoneUtil.InZone(newZone, p0) then table.insert(DoorNodes, p0) end
+			if ZoneUtil.InZone(newZone, p1) then table.insert(DoorNodes, p1) end
+		end
+	end
+	
+	if workspace.DebugMission.Cells:FindFirstChild("Links") then
+		for _, link in pairs(workspace.DebugMission.Cells.Links:GetChildren()) do
+			if link:GetAttribute("Path") then
+				local p0 = (link.CFrame * CFrame.new(0, 0.5, DOOR_BUFFER)).p
+				local p1 = (link.CFrame * CFrame.new(0, 0.5, -DOOR_BUFFER)).p
+				if ZoneUtil.InZone(newZone, p0) then table.insert(DoorNodes, p0) end
+				if ZoneUtil.InZone(newZone, p1) then table.insert(DoorNodes, p1) end
+			end
+		end
+	end
+
+	CurrentModel = Instance.new("Model")
+	CurrentModel.Parent = workspace
+	CurrentMap = {}
+	CurrentZone = newZone
+
+	for _, pos in pairs(DoorNodes) do
+		CreateNode(pos, false, true)
+	end
+	
+	--[[if CurrentZone:GetAttribute("Path") then
+		local data = HttpService:JSONDecode(CurrentZone:GetAttribute("Path"))
+		if data.Placed then
+			for _, placed in pairs(data.Placed) do
+				CreateNode(Vector3.new(unpack(placed)), true, true)
+			end
+		end
+	end]]
+end
+
+local function OpenZoneWithoutRegenerating(newZone)
+	if CurrentZone then
+		CloseZone()
+	end
+	
+	CurrentModel = Instance.new("Model")
+	CurrentModel.Parent = workspace
+	CurrentMap = {}
+	CurrentZone = newZone
+
+	if not CurrentZone:GetAttribute("Path") then
+		print("Doing first time generation for zone")
+		return OpenZone(newZone)
+	end
+		
+	local data = HttpService:JSONDecode(CurrentZone:GetAttribute("Path"))
+	local PlacedNodes = {}
+	if data.Placed then
+		for _, placed in pairs(data.Placed) do
+			local node = Vector3.new(unpack(placed))
+			PlacedNodes[node] = true
+		end
+	end
+	
+	local NodeParts = {}
+	for _, node in pairs(data.Node) do
+		local pos = Vector3.new(unpack(node))
+		local nodePart = CreateNode(pos, PlacedNodes[pos], false)
+		table.insert(NodeParts, nodePart)
+	end
+	
+	for startIndex, list in data.Link do
+		for _, endIndex in list do
+			AddOneWayLink(NodeParts[startIndex], NodeParts[endIndex])
+		end
+	end
+end
+
+local function RemovePart(part)
+	if CurrentMap[part] then -- Is node
+		for _, linkPart in pairs(CurrentMap[part]) do
+			linkPart:Destroy()
+		end
+		CurrentMap[part] = nil
+		for node, links in pairs(CurrentMap) do
+			if links[part] then
+				links[part]:Destroy()
+				links[part] = nil
+			end
+		end
+		part:Destroy()
+	else -- Is link
+		for node, linkList in pairs(CurrentMap) do
+			for link, linkPart in pairs(linkList) do
+				if linkPart == part then
+					linkPart:Destroy()
+					linkList[link] = nil
+					break
+				end
+			end
+		end
+	end
+end
+
+local function Serialize()
+	local node = {}
+	local nodeId = {}
+	local link = {}
+	local placed = {}
+	
+	local function getNode(p)
+		if not nodeId[p] then
+			local pos = p.Position
+			node[#node+1] = {pos.X, pos.Y, pos.Z}
+			nodeId[p] = #node
+			
+			if p.Transparency > 0.25 then
+				table.insert(placed, node[#node])
+			end
+		end
+		return nodeId[p]
+	end
+	
+	for node, linkList in pairs(CurrentMap) do
+		local id = getNode(node)
+		local links = {}
+		for linkNode in pairs(linkList) do
+			table.insert(links, getNode(linkNode))
+		end
+		link[id] = links
+	end
+	
+	return HttpService:JSONEncode({
+		Node = node,
+		Link = link,
+		Placed = placed,
+	})
+end
+
+local function Save()
+	CurrentZone:SetAttribute("Path", Serialize())
+end
+
+local LastCTap = 0
+
+return {
+	Init = function(mouse)
+		print("T - Open Cell Meadow Map")
+		print("C - Fully Clear Meadow Map (Tap twice)")
+		print("G - Add Node")
+		print("H - Add Node (No Link Generation)")
+		print("R - Remove")
+
+		VisibilityToggle.TempReveal(workspace.DebugMission.Cells)
+		
+		UserInputConnection = UserInputService.InputBegan:Connect(function(io)
+			if io.KeyCode == Enum.KeyCode.C then
+				if tick() - LastCTap < 0.5 then
+					LastCTap = 0
+					local zone = ZoneUtil.GetZone(mouse.Hit.p)
+					if zone then 
+						OpenZone(zone) 
+						Save()
+					end
+				else
+					LastCTap = tick()
+					local clock = LastCTap
+					task.delay(0.5, function()
+						if clock ~= LastCTap then
+							return
+						end
+						warn("Double tap C to fully clear and regenerate the meadow map for this room\nThis will remove any manual modifications you've made")
+					end)
+				end
+			elseif io.KeyCode == Enum.KeyCode.T then
+				local zone = ZoneUtil.GetZone(mouse.Hit.p)
+				if zone then 
+					OpenZoneWithoutRegenerating(zone) 
+					Save()
+				elseif CurrentZone then
+					CloseZone()
+				end
+			elseif io.KeyCode == Enum.KeyCode.G then
+				if CurrentZone then
+					CreateNode(mouse.Hit.p + Vector3.new(0, 1, 0), true, true)
+					Save()
+				end
+			elseif io.KeyCode == Enum.KeyCode.H then
+				if CurrentZone then
+					CreateNode(mouse.Hit.p + Vector3.new(0, 1, 0), true, false)
+					Save()
+				end
+			elseif io.KeyCode == Enum.KeyCode.R then
+				if mouse.Target then
+					RemovePart(mouse.Target)
+					Save()
+				end
+			elseif io.UserInputType == Enum.UserInputType.MouseButton1 then
+				if LinkWith then
+					if CurrentMap[LinkWith] and CurrentMap[mouse.Target] then
+						AddLink(LinkWith, mouse.Target)
+						Save()
+					else
+						print("Link failed")
+					end
+					LinkWith = nil
+				elseif CurrentMap[mouse.Target] then
+					LinkWith = mouse.Target
+					print("Click another node to link")
+				end
+			end
+		end)
+	end,
+	Clean = function()
+		if UserInputConnection then
+			UserInputConnection:Disconnect()
+			UserInputConnection = nil
+		end
+		if CurrentZone then
+			CloseZone()
+		end
+	end,
+}]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="Folder" referent="RBXAB83B1F3B86C401F8C80F96C5E0315CD">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
@@ -1493,19 +1063,20 @@ return module
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBX9C9548A6136A49BA8048D71AF8FD208A">
+			<Item class="ModuleScript" referent="RBXB909DCC8A7504AD29F5CA958B1D9806C">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 					<bool name="DefinesCapabilities">false</bool>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Main</string>
-					<string name="ScriptGuid">{AE37E274-982A-4881-895C-102EB8ABA127}</string>
+					<string name="ScriptGuid">{6A2C89C2-EDBA-412D-BFF9-BB5793CEFADC}</string>
 					<ProtectedString name="Source"><![CDATA[--!strict
 
 local UserInputService = game:GetService("UserInputService")
 
 local Button = require(script.Parent.Parent.Util.Button)
+local VisibilityToggle = require(script.Parent.Parent.Util.VisibilityToggle)
 
 local DEFAULT_COLOR = Color3.fromRGB(163, 162, 165)
 local OFF_COLOR = Color3.fromRGB(30, 30, 30)
@@ -1543,34 +1114,37 @@ local CastConfig = RaycastParams.new()
 CastConfig.FilterType = Enum.RaycastFilterType.Exclude
 
 module.GetProjectedDistance = function(self, pos: Vector3, dir: Vector3)
-	
 	local cast = workspace:Raycast(pos, dir * MAX_DIST, CastConfig)
 	while cast and cast.Instance and cast.Instance.Transparency > 0.3 do
 		table.insert(IgnoreList, cast.Instance)
 		CastConfig.FilterDescendantsInstances = IgnoreList
 		cast = workspace:Raycast(pos, dir * MAX_DIST, CastConfig)
 	end
-	
+
 	if cast then
 		return cast.Distance
 	end
-	
+
 	return MAX_DIST
 end
 
 -- Init/Cleanup
 module.Init = function(mouse: PluginMouse)
-	if module.Active then return end
+	if module.Active then
+		return
+	end
 	module.Active = true
-	
+
 	if workspace:FindFirstChild("DebugMission") and workspace.DebugMission:FindFirstChild("Props") then
 		for _, prop in pairs(workspace.DebugMission.Props:GetChildren()) do
 			if prop:IsA("BasePart") then
 				prop.Color = prop:GetAttribute(ATTRIBUTE_NAME) and ON_COLOR or OFF_COLOR
 			end
 		end
-		
+
 		if workspace.DebugMission:FindFirstChild("Barrier") then
+			VisibilityToggle.TempReveal(workspace.DebugMission.Barrier)
+
 			for _, part in pairs(workspace.DebugMission.Barrier:GetChildren()) do
 				if part:GetAttribute(PROP_BARRIER) then
 					part:Destroy()
@@ -1578,28 +1152,32 @@ module.Init = function(mouse: PluginMouse)
 			end
 		end
 	end
-	
+
 	local self = module
 	self.Mouse = mouse
-	
-	self.InputEvent = UserInputService.InputBegan:Connect(function(io) self:ProcessInput(io) end)
+
+	self.InputEvent = UserInputService.InputBegan:Connect(function(io)
+		self:ProcessInput(io)
+	end)
 end
 
 module.Clean = function()
-	if not module.Active then return end
+	if not module.Active then
+		return
+	end
 	module.Active = false
-	
+
 	local self = module
-	
+
 	if workspace:FindFirstChild("DebugMission") and workspace.DebugMission:FindFirstChild("Props") then
 		for _, prop in pairs(workspace.DebugMission.Props:GetChildren()) do
 			if prop:IsA("BasePart") then
 				prop.Color = DEFAULT_COLOR
-				
+
 				if prop:GetAttribute(ATTRIBUTE_NAME) then
 					local top = prop.CFrame * CFrame.new(0, prop.Size.Y / 2, 0)
 					local dist = module:GetProjectedDistance(top.p, Vector3.yAxis)
-					
+
 					local b = Instance.new("Part")
 					b.Color = ON_COLOR
 					b.Size = Vector3.new(prop.Size.X, dist, prop.Size.Z)
@@ -1609,15 +1187,15 @@ module.Clean = function()
 					b.TopSurface = Enum.SurfaceType.SmoothNoOutlines
 					b.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
 					b.CastShadow = false
-					
+
 					b:SetAttribute(PROP_BARRIER, true)
-					
+
 					b.Parent = workspace.DebugMission.Barrier
 				end
 			end
 		end
 	end
-	
+
 	self.InputEvent:Disconnect()
 	self.InputEvent = nil
 end
@@ -1629,7 +1207,7 @@ return module
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="Folder" referent="RBXEDD4181D799343AFA9EE5100D3C7D063">
+		<Item class="Folder" referent="RBX6762D422A9534787842ACB33188C5E34">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
@@ -1638,14 +1216,14 @@ return module
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBXDBDAB324264B4A66B4F4758EB0E9DFDB">
+			<Item class="ModuleScript" referent="RBX7FA8AED34AE649FBB6A1CB92937A5691">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 					<bool name="DefinesCapabilities">false</bool>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Main</string>
-					<string name="ScriptGuid">{86D016B2-9695-482B-B505-44C5202A0A49}</string>
+					<string name="ScriptGuid">{B47D2A6A-E525-4E7F-972C-798AF70C620B}</string>
 					<ProtectedString name="Source"><![CDATA[local PhysicsService = game:GetService("PhysicsService")
 
 local COLLISON_GROUP = "PluginNoCollision"
@@ -1958,7 +1536,1121 @@ return module
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="Folder" referent="RBX15CA4BD30B0E4971961D37A78A0ECA39">
+		<Item class="Folder" referent="RBX2138D9CBE24E4BA489B01264B136CFD9">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+				<bool name="DefinesCapabilities">false</bool>
+				<string name="Name">SectionVisibility</string>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+			<Item class="ModuleScript" referent="RBXB7D0DED35AE5428EBAAB4359B292C613">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">Main</string>
+					<string name="ScriptGuid">{B3F2C303-EDB1-415F-842C-4497AE3CE51C}</string>
+					<ProtectedString name="Source"><![CDATA[local VisibilityToggle = require(script.Parent.Parent.Util.VisibilityToggle)
+local sections = { "Barrier", "Cells", "Nodes", "LoudSpawns", "CombatFlowMap" }
+
+local cache = {}
+
+return {
+	OpenMenu = function(plugin)
+		local menu = cache.Menu or plugin:CreatePluginMenu("SectionVisibilityMenu")
+		cache.Menu = menu
+		menu:Clear()
+
+		for _, section in sections do
+			local instance = workspace:FindFirstChild("DebugMission") and workspace.DebugMission:FindFirstChild(section)
+			if not instance then
+				continue
+			end
+			local hidden = VisibilityToggle.IsHidden(instance)
+			local action = if hidden then "Show" else "Hide"
+			local id = `SectionVisibility_{section}_{action}`
+			local option = cache[id]
+			if not option then
+				option = plugin:CreatePluginAction(id, `{action} {section}`, "")
+				option.Triggered:Connect(function()
+					if hidden then
+						VisibilityToggle.Reveal(workspace.DebugMission:FindFirstChild(section))
+					else
+						VisibilityToggle.Hide(workspace.DebugMission:FindFirstChild(section))
+					end
+				end)
+				cache[id] = option
+			end
+			menu:AddAction(option)
+		end
+
+		if not cache.ShowAll then
+			local ShowAll = plugin:CreatePluginAction("SectionVisibility_ShowAll", "Show All", "")
+			ShowAll.Triggered:Connect(function()
+				if not workspace:FindFirstChild("DebugMission") then
+					return
+				end
+				for _, section in sections do
+					local part = workspace.DebugMission:FindFirstChild(section)
+					if part then
+						VisibilityToggle.Reveal(part)
+					end
+				end
+			end)
+			local HideAll = plugin:CreatePluginAction("SectionVisibility_HideAll", "Hide All", "")
+			HideAll.Triggered:Connect(function()
+				if not workspace:FindFirstChild("DebugMission") then
+					return
+				end
+				for _, section in sections do
+					local part = workspace.DebugMission:FindFirstChild(section)
+					if part then
+						VisibilityToggle.Hide(part)
+					end
+				end
+			end)
+
+			cache.ShowAll = ShowAll
+			cache.HideAll = HideAll
+		end
+
+		menu:AddAction(cache.ShowAll)
+		menu:AddAction(cache.HideAll)
+		menu:ShowAsync()
+	end,
+}
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="Folder" referent="RBX5B399118D0694B09BA6AC3C7A2FAE087">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+				<bool name="DefinesCapabilities">false</bool>
+				<string name="Name">Util</string>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+			<Item class="ModuleScript" referent="RBXCD169AD03D104E93B3AC7795E143C9AC">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">Actor</string>
+					<string name="ScriptGuid">{D7E84EE7-B73E-4AEC-93D4-09449D23F347}</string>
+					<ProtectedString name="Source"><![CDATA[local module = {
+	Create = require(script._ActorCreation._Create),
+
+	State = require(script._ActorState._State),
+	Derived = require(script._ActorState._Derived),
+	DerivedTable = require(script._ActorState._DerivedTable),
+	Watch = require(script._ActorState._Watch),
+
+	Spring = require(script._ActorAnim._ActorSpring),
+	Cubic = require(script._ActorAnim._Cubic),
+
+	OnChange = require(script._OnChange),
+}
+
+return module]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="Folder" referent="RBXACDCD1E248504CF09C47A6F620620CDA">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<string name="Name">_ActorAnim</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+					<Item class="ModuleScript" referent="RBXD73D5FFC4935414F882E248C3F562C59">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">_ActorSpring</string>
+							<string name="ScriptGuid">{E9FE25BE-C662-4BB9-BE1C-B7059AD9F3D8}</string>
+							<ProtectedString name="Source"><![CDATA[local AnimRunner = require(script.Parent._Anim)
+
+local numberClose = function(x, y)
+	return math.abs(x - y) < 0.01
+end
+local vectorClose = function(x, y)
+	return (x - y).magnitude < 0.01
+end
+local udim2Close = function(x, y)
+	local rel = x - y
+	return math.abs(rel.X.Offset) <= 1 and math.abs(rel.Y.Offset) <= 1 and math.abs(rel.X.Scale) < 0.01 and math.abs(rel.Y.Scale) < 0.01 
+end
+
+local function getStartingVelocityByType(value)
+	if typeof(value) == "number" then
+		return 0, numberClose
+	elseif typeof(value) == "Vector3" then
+		return Vector3.new(), vectorClose
+	--elseif typeof(value) == "UDim2" then
+	--	return UDim2.new(), udim2Close
+	end
+end
+
+local Spring = {
+	_Update = function(self)
+		self.T = self._Follow._Value
+		if self._Active then return true end
+		AnimRunner:Start(self)
+	end,
+	_Step = function(self, dt)
+		if self._IsClose(self._Value, self.T) then
+			self._Value = self.T
+			return true
+		end
+		if dt > 0.03 then dt = 0.03 end
+		local accel = (self.T - self._Value) * self._Force - self.V * self._Damping
+		local vel = self.V
+		self.V = self.V + accel * dt * self._Speed
+		self._Value = self._Value + (self.V + vel) * dt * 0.5 * self._Speed
+		return false
+	end,
+	_GetDependencies = function(self)
+		return { self._Follow }
+	end,
+	_Init = function(self)
+		if self._Initialized then return end
+		self._Initialized = true
+		self._Follow._Dependent[self] = true
+		if self._Follow._Init then
+			self._Follow:_Init()
+		end
+		self._Value = self._Follow._Value -- Position
+		self.T = self._Follow._Value -- Target
+		self.V, self._IsClose = getStartingVelocityByType(self._Follow._Value)
+	end
+}
+Spring.__index = Spring
+
+return function(follow, force, damping, speed)
+	local self = {}
+	self._StateType = "_Spring"
+	self._Active = false
+	self._Follow = follow
+	self._Force = force or 50
+	self._Damping = damping or 10
+	self._Speed = speed or 1
+	self._Temp = follow._Temp
+
+	self._Priority = follow._Priority + 1
+	self._Dependent = {}
+	self._Link = {}
+
+	setmetatable(self, Spring)
+	return self
+end]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+					<Item class="ModuleScript" referent="RBXE8BC2CDEA366408D97719E426632D221">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">_Anim</string>
+							<string name="ScriptGuid">{F288EC48-8A8A-4F94-9996-666D01783997}</string>
+							<ProtectedString name="Source"><![CDATA[local RunService = game:GetService("RunService")
+local Update = require(script.Parent.Parent._ActorState._Update)
+
+local Anim = {}
+Anim._List = {}
+Anim._Active = false
+
+function Anim:Start(data)
+	self._List[data] = true
+	data._Active = true
+	if self._Active then return end
+	self._Active = true
+	self._StepEvent = RunService.RenderStepped:Connect(function(dt)
+		for data in pairs(self._List) do
+			if data:_Step(dt) then
+				self._List[data] = nil
+				data._Active = false
+			end
+			Update(data)
+		end
+		if not next(self._List) then
+			self._Active = false
+			self._StepEvent:Disconnect()
+			self._StepEvent = nil
+		end
+	end)
+end
+
+return Anim]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+					<Item class="ModuleScript" referent="RBX75394EF2BE6E44FDBDA312A8AAF2210D">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">_Cubic</string>
+							<string name="ScriptGuid">{966EF197-E356-4072-9A84-FF1D948EEDCE}</string>
+							<ProtectedString name="Source"><![CDATA[local DEFAULT_LINEAR_TRANSITION_RATE = 4
+
+local AnimRunner = require(script.Parent.Parent._ActorAnim._Anim)
+
+local Cubic = {
+	_Update = function(self)
+		self.T = self._Follow._Value
+		if self._Active then return true end
+		AnimRunner:Start(self)
+	end,
+	_Step = function(self, dt)
+		local shift = dt * self._Speed
+		local done = false
+		if math.abs(self.T - self.P) < shift then
+			self.P = self.T
+			done = true
+		elseif self.P < self.T then
+			self.P += shift
+		else
+			self.P -= shift
+		end
+		local a = self.P
+		self._Value = a * a * (-2 * a + 3)
+		return done
+	end,
+	_GetDependencies = function(self)
+		return { self._Follow }
+	end,
+	_Init = function(self)
+		if self._Initialized then return end
+		self._Initialized = true
+		self._Follow._Dependent[self] = true
+		if self._Follow._Init then
+			self._Follow:_Init()
+		end
+		local a = self._Follow._Value
+		self.P = a -- Position
+		self.T = a -- Target
+		self._Value = a * a * (-2 * a + 3)
+	end
+}
+Cubic.__index = Cubic
+
+return function(follow, speed)
+	local self = {}
+	self._StateType = "_Cubic"
+	self._Active = false
+	self._Follow = follow
+	self._Speed =  DEFAULT_LINEAR_TRANSITION_RATE
+	if speed then
+		self._Speed = self._Speed * speed
+	end
+	self._Temp = follow._Temp
+
+	self._Priority = follow._Priority + 1
+	self._Dependent = {}
+	self._Link = {}
+
+	setmetatable(self, Cubic)
+	return self
+end]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+					<Item class="ModuleScript" referent="RBX0E1AF04AEEAD44B8B4887246C364859E">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">_Linear</string>
+							<string name="ScriptGuid">{D87754A4-0832-4FF9-97FE-DD804C263594}</string>
+							<ProtectedString name="Source"><![CDATA[local DEFAULT_LINEAR_TRANSITION_RATE = 4
+
+local AnimRunner = require(script.Parent.Parent._ActorAnim._Anim)
+
+local Cubic = {
+	_Update = function(self)
+		self.T = self._Follow._Value
+		if self._Active then return true end
+		AnimRunner:Start(self)
+	end,
+	_Step = function(self, dt)
+		local shift = dt * self._Speed
+		local done = false
+		if math.abs(self.T - self.P) < shift then
+			self.P = self.T
+			done = true
+		elseif self.P < self.T then
+			self.P += shift
+		else
+			self.P -= shift
+		end
+		local a = self.P
+		self._Value = a * a * (-2 * a + 3)
+		return done
+	end,
+	_GetDependencies = function(self)
+		return { self._Follow }
+	end,
+	_Init = function(self)
+		if self._Initialized then return end
+		self._Initialized = true
+		self._Follow._Dependent[self] = true
+		if self._Follow._Init then
+			self._Follow:_Init()
+		end
+		local a = self._Follow._Value
+		self.P = a -- Position
+		self.T = a -- Target
+		self._Value = a * a * (-2 * a + 3)
+	end
+}
+Cubic.__index = Cubic
+
+return function(follow, speed)
+	local self = {}
+	self._StateType = "_Cubic"
+	self._Active = false
+	self._Follow = follow
+	self._Speed =  DEFAULT_LINEAR_TRANSITION_RATE
+	if speed then
+		self._Speed = self._Speed * speed
+	end
+	self._Temp = follow._Temp
+
+	self._Priority = follow._Priority + 1
+	self._Dependent = {}
+	self._Link = {}
+
+	setmetatable(self, Cubic)
+	return self
+end]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+				</Item>
+				<Item class="Folder" referent="RBX97F89AEEF1CE4C44A35393C98C8A1E0F">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<string name="Name">_ActorCreation</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+					<Item class="ModuleScript" referent="RBX12972F2661424DA8975F55CA57A0B736">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">_Create</string>
+							<string name="ScriptGuid">{2110A828-566D-4950-81F6-0B8FE8C5A12E}</string>
+							<ProtectedString name="Source"><![CDATA[local TABLE = "table"
+local SCRIPT_SIGNAL = "RBXScriptSignal"
+local INST = "Instance"
+local DEBUG = "Debug"
+local TEMP_STATE = "TempState"
+
+local HandleStateCleanup = require(script.Parent:WaitForChild("_HandleStateCleanup"))
+
+
+local function processChildren(parent, item, stateLink)
+	if typeof(item) == INST then
+		item.Parent = parent
+		return
+	end
+	if item._DerivedTable then
+		item:_Init()
+		item.OnAdd = function(_, instance)
+			if typeof(instance) == INST then
+				instance.Parent = parent
+			end
+		end
+		item.OnRemove = function(_, instance)
+			if typeof(instance) == INST then
+				instance:Destroy()
+			end
+		end
+		for _, instance in pairs(item._Value) do
+			if typeof(instance) == INST then
+				instance.Parent = parent
+			end
+		end
+		if stateLink then
+			table.insert(stateLink, item)
+		end
+	else
+		for _, c in pairs(item) do
+			processChildren(parent, c, stateLink)
+		end
+	end
+end
+
+return function(className, props, children, autoCleanup)
+	local instance = Instance.new(className)
+
+	local stateLink
+	if autoCleanup then
+		stateLink = {}
+	end
+
+	for name, value in pairs(props) do
+		if name == DEBUG or name == TEMP_STATE then continue end
+
+		if typeof(value) == TABLE then
+			if value._StateType then
+				value._Link[instance] = name
+				if value._Init then
+					value:_Init()
+				end
+				instance[name] = value._Value
+				if autoCleanup then
+					table.insert(stateLink, value)
+				end
+			end
+		elseif typeof(name) == TABLE then
+			if name._OnChange then
+				local propName = name._Property
+				instance:GetPropertyChangedSignal(propName):Connect(function() value(instance[propName]) end)
+				value(props[propName] or instance[propName])
+			end
+		elseif typeof(instance[name]) == SCRIPT_SIGNAL then
+			instance[name]:Connect(value)
+		else
+			instance[name] = value
+		end
+	end
+
+	if children then
+		processChildren(instance, children, autoCleanup and stateLink)
+	end
+
+	if autoCleanup and next(stateLink) then
+		instance.AncestryChanged:Connect(function()
+			if instance.Parent == nil then
+				if props.Debug then
+					warn("Cleanup:", props.Debug, stateLink)
+				end
+				for _, dep in pairs(stateLink) do
+					dep._Link[instance] = nil
+					HandleStateCleanup(dep)
+				end
+			end
+		end)
+	end
+
+	return instance
+end]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+					<Item class="ModuleScript" referent="RBX507EFB84330644FBA4C80711C7F43A89">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">_HandleStateCleanup</string>
+							<string name="ScriptGuid">{50C8E543-3D70-4AE7-9779-EBB735B3DEA1}</string>
+							<ProtectedString name="Source"><![CDATA[local cleanup
+cleanup = function(state)
+	if state.Debug then
+		warn(state.Debug, state._Temp, state._GetDependencies ~= nil, next(state._Dependent), next(state._Link))
+	end
+	if not state._Persist and state._GetDependencies and not next(state._Dependent) and not next(state._Link) then
+		if state.Debug then
+			warn("Cleanup", state.Debug, state:_GetDependencies())
+		end
+		state._Initialized = false
+		for _, dep in pairs(state:_GetDependencies()) do
+			dep._Dependent[state] = nil
+			cleanup(dep)
+		end
+	end
+end
+
+return cleanup]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+				</Item>
+				<Item class="Folder" referent="RBX8881E004D2DB4399A4D5676276B0BAE8">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<string name="Name">_ActorState</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+					<Item class="ModuleScript" referent="RBX436BB467F38A499CAE9A8516E4749D4A">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">_Derived</string>
+							<string name="ScriptGuid">{D16B012F-8C65-4A87-A1E8-951903240BE8}</string>
+							<ProtectedString name="Source"><![CDATA[local Derived = {
+	_Update = function(self)
+		local values = {}
+		for k, v in pairs(self._Dependencies) do
+			values[k] = v._Value or false
+		end
+		local newValue = self._Eval(unpack(values))
+		if newValue ~= self._Value then
+			self._Value = newValue
+			return true
+		end
+		return false
+	end,
+	_GetDependencies = function(self)
+		return self._Dependencies
+	end,
+	_Init = function(self)
+		if self._Initialized then return end
+		self._Initialized = true
+		for _, v in pairs(self._Dependencies) do
+			v._Dependent[self] = true
+			if v._Init then
+				v:_Init()
+			end
+		end
+		self:_Update()
+	end
+}
+Derived.__index = Derived
+
+return function(eval, ...)
+	local self = {}
+	self._StateType = "_Derived"
+	self._Eval = eval
+	self._Dependencies = {...}
+
+	local priority = 0
+	local temp = false
+	for k, v in pairs(self._Dependencies) do
+		priority = math.max(priority, v._Priority)
+		temp = temp or v._Temp
+	end
+
+	self._Priority = priority + 1
+	self._Temp = temp
+
+	self._Dependent = {}
+	self._Link = {}
+
+	setmetatable(self, Derived)
+	return self
+end]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+					<Item class="ModuleScript" referent="RBXC94744A70F97433EA87203C63B7AD4D9">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">_DerivedTable</string>
+							<string name="ScriptGuid">{5B9B9783-35E5-4221-8A16-00B0AC3DB7DE}</string>
+							<ProtectedString name="Source"><![CDATA[local DerivedTable = {
+	_Update = function(self)
+		local changed = false
+		local input = self._Input._Value
+
+		for k, v in pairs(input) do
+			local li = self._LastInput[k]
+			if v ~= li then
+				changed = true
+				if li and self.OnRemove then
+					self.OnRemove(k, self._Value[k])
+				end
+				self._LastInput[k] = v
+				self._Value[k] = self._Eval(k, v)
+				if self.OnAdd then
+					self.OnAdd(k, self._Value[k])
+				end
+			end
+		end
+
+		for k, v in pairs(self._LastInput) do
+			if not input[k] then
+				if self.OnRemove then
+					self.OnRemove(k, self._Value[k])
+				end
+				self._LastInput[k] = nil
+				changed = true
+			end
+		end
+
+		return changed
+	end,
+	_GetDependencies = function(self)
+		return { self._Input }
+	end,
+	_Init = function(self)
+		if self._Initialized then return end
+		self._Initialized = true
+		self._Input._Dependent[self] = true
+		if self._Input._Init then
+			self._Input:_Init()
+		end
+		self:_Update()
+	end
+}
+DerivedTable.__index = DerivedTable
+
+return function(eval, input, onAdd, onRemove)
+	local self = {}
+	self._StateType = "_DerivedTable"
+	self._DerivedTable = true
+	self._Eval = eval
+	self._Value = {}
+	self._LastInput = {}
+	self._Input = input
+	self._Temp = input._Temp
+	self._Priority = input._Priority + 1
+
+	self.OnAdd = onAdd
+	self.OnRemove = onRemove
+
+	self._Dependent = {}
+	self._Link = {}
+
+	setmetatable(self, DerivedTable)
+	return self
+end]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+					<Item class="ModuleScript" referent="RBX32FC061A07AF4BCC85010B45CC881F6A">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">_State</string>
+							<string name="ScriptGuid">{3C480421-EFD2-4772-BE3F-D86F54DC1C48}</string>
+							<ProtectedString name="Source"><![CDATA[local Update = require(script.Parent:WaitForChild("_Update"))
+
+local State = {
+	set = function(self, value)
+		if self._Value == value then return end
+		self._Value = value
+		Update(self)
+	end
+}
+State.__index = State
+
+return function(value)
+	local self = {}
+	self._StateType = "_State"
+	self._State = true
+	self._Value = value
+	self._Priority = 0
+	self._Dependent = {}
+	self._Link = {}
+	self._Temp = false
+	--setmetatable(self._Link, WEAK_KEYS)
+
+	setmetatable(self, State)
+	return self
+end]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+					<Item class="ModuleScript" referent="RBX4606BD031FCF442C898897520B348FFE">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">_Update</string>
+							<string name="ScriptGuid">{C98963BD-3255-4102-BFE4-1907D55FAD53}</string>
+							<ProtectedString name="Source"><![CDATA[return function(base)
+	local list = {}
+
+	for instance, prop in pairs(base._Link) do
+		instance[prop] = base._Value
+	end
+
+	for dep in pairs(base._Dependent) do
+		list[dep] = true
+	end
+
+	local best = next(list)
+	while best do
+		local priority = best._Priority
+		for dep in pairs(list) do
+			if dep._Priority < priority then
+				best = dep
+				priority = best._Priority
+			end
+		end
+		list[best] = nil
+
+		if best:_Update() then -- this updated and we need to change it's dependencies
+			for instance, prop in pairs(best._Link) do
+				instance[prop] = best._Value
+			end
+			for dep in pairs(best._Dependent) do
+				list[dep] = true
+			end
+		end
+
+		best = next(list)
+	end
+end]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+					<Item class="ModuleScript" referent="RBX75394E98FD8841E5B8ADF5F1F6985A8D">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">_Watch</string>
+							<string name="ScriptGuid">{07A9CFCC-1049-4AF4-A0E1-C0F65BFBC7B6}</string>
+							<ProtectedString name="Source"><![CDATA[local Watch = {
+	_Update = function(self)
+		local values = {}
+		for k, v in pairs(self._Dependencies) do
+			values[k] = v._Value or false
+		end
+		-- Make Watch Callback
+        self._Eval(unpack(values))
+		return false
+	end,
+	_GetDependencies = function(self)
+		return self._Dependencies
+	end,
+	_Init = function(self)
+		if self._Initialized then return end
+		self._Initialized = true
+		for _, v in pairs(self._Dependencies) do
+			v._Dependent[self] = true
+			if v._Init then
+				v:_Init()
+			end
+		end
+		self:_Update()
+	end
+}
+Watch.__index = Watch
+
+return function(eval, ...)
+	local self = {}
+	self._StateType = "_Watch"
+	self._Eval = eval
+	self._Dependencies = {...}
+
+	local priority = 0
+	local temp = false
+	for k, v in pairs(self._Dependencies) do
+		priority = math.max(priority, v._Priority)
+		temp = temp or v._Temp
+	end
+
+	self._Priority = priority + 1
+	self._Temp = temp
+
+	self._Dependent = {}
+	self._Link = {}
+
+	setmetatable(self, Watch)
+
+    -- Unlike other state components, we want to init this one immediataly as it will never connect to an instance
+    -- Any dependencies will never be released, only use this for debugging or if you're sure those state components don't need to be gced
+    self:_Init()
+
+	return self
+end]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+				</Item>
+				<Item class="ModuleScript" referent="RBXAC1F7662564A4CAB92F4BE95100C2BAE">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">_OnChange</string>
+						<string name="ScriptGuid">{B520E5BF-F05A-463F-9244-0114D67A2167}</string>
+						<ProtectedString name="Source"><![CDATA[return function(prop)
+	return {
+		_OnChange = true,
+		_Property = prop,
+	}
+end]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="ModuleScript" referent="RBX2875C44809544004A9F94C0E4CA414A2">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">AxisAlign</string>
+					<string name="ScriptGuid">{2F506F6F-C223-4132-8BA3-74132E7825AC}</string>
+					<ProtectedString name="Source"><![CDATA[local AxisAlign = {}
+
+local VECTOR_UP = Vector3.new(0, 1, 0)
+
+function AxisAlign.BestMatch(cfr, axis)
+	local comp = axis or VECTOR_UP
+	
+	local v0, v1, v2 = cfr:VectorToWorldSpace(VECTOR_UP), cfr:VectorToWorldSpace(Vector3.new(1, 0, 0)), cfr:VectorToWorldSpace(Vector3.new(0, 0, 1))
+	local d0, d1, d2 = v0:Dot(comp), v1:Dot(comp), v2:Dot(comp)
+	
+	if d0 < 0 then
+		d0 = -d0
+		v0 = -v0
+	end
+	if d1 < 0 then
+		d1 = -d1
+		v1 = -v1
+	end
+	if d2 < 0 then
+		d2 = -d2
+		v2 = -v2
+	end
+	
+	if d1 > d0 then
+		d1, d0 = d0, d1
+		v1, v0 = v0, v1
+	end
+	if d2 > d0 then
+		d2, d0 = d0, d2
+		v2, v0 = v0, v2
+	end
+	
+	return v0, v1, v2
+end
+
+function AxisAlign.CameraAlign(cfr, axis)
+	local _, v0, v1 = AxisAlign.BestMatch(cfr, axis)
+	
+	local cam = workspace.CurrentCamera.CFrame.LookVector
+	if math.abs(v1:Dot(cam)) > math.abs(v0:Dot(cam)) then
+		v0 = v1
+	end
+	
+	local flat = Vector3.new(v0.X, 0, v0.Z).Unit
+	return flat, flat:Cross(VECTOR_UP)
+end
+
+return AxisAlign
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+			<Item class="ModuleScript" referent="RBXBE321963CDBE4AD7B48DC617CE5ED15F">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">Button</string>
+					<string name="ScriptGuid">{B5E00283-5401-462A-81E4-C75C4E0BF2ED}</string>
+					<ProtectedString name="Source"><![CDATA[local Actor = require(script.Parent.Actor)
+local Create = Actor.Create
+local State = Actor.State
+local Derived = Actor.Derived
+
+return function(props)
+	local enabled = props.Enabled or State(false)
+	
+	return Create("TextButton", {
+		BorderSizePixel = 0,
+		Size = props.Size or UDim2.new(0, 200, 0, 40),
+		Text = props.Text,
+		BackgroundTransparency = Derived(function(e)
+			return e and 0 or 0.5
+		end, enabled),
+		BackgroundColor3 = Derived(function(e)
+			return e and Color3.new(1, 1, 1) or Color3.new(0, 0, 0)
+		end, enabled),
+		TextColor3 = Derived(function(e)
+			return e and Color3.new(0, 0, 0) or Color3.new(1, 1, 1)
+		end, enabled),
+		
+		TextSize = 20,
+		Font = Enum.Font.SciFi,
+		
+		Activated = props.Activated,
+		Position = props.Position,
+		AnchorPoint = props.AnchorPoint
+	})
+end]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+			<Item class="ModuleScript" referent="RBXFED618F0F4784FD091D1531F5BC07A53">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">VisibilityToggle</string>
+					<string name="ScriptGuid">{A859C463-E038-4043-8C78-4168E28672DA}</string>
+					<ProtectedString name="Source"><![CDATA[local STASH_LINK_NAME = "StashLink"
+
+local module = {}
+
+module.GetStashRoot = function()
+	local root = game.ReplicatedStorage:FindFirstChild("StashRoot")
+	if not root then
+		root = Instance.new("Folder")
+		root.Name = "StashRoot"
+		root.Parent = game.ReplicatedStorage
+	end
+	return root
+end
+
+module.Hide = function(part)
+	if part:FindFirstChild(STASH_LINK_NAME) then
+		return false
+	end
+
+	local originalParent = part.Parent
+	part.Parent = module.GetStashRoot()
+	local folder = Instance.new("Folder")
+	folder.Parent = originalParent
+	folder.Name = part.Name
+	local link = Instance.new("ObjectValue")
+	link.Value = part
+	link.Name = STASH_LINK_NAME
+	link.Parent = folder
+
+	return folder
+end
+
+module.Reveal = function(part)
+	local link = part:FindFirstChild(STASH_LINK_NAME)
+	print("Try reveal:", part, link)
+	if not link then
+		return false
+	end
+
+	local val = link.Value
+	val.Parent = part.Parent
+	part:Destroy()
+
+	return val
+end
+
+module.IsHidden = function(part)
+	return part:FindFirstChild(STASH_LINK_NAME) ~= nil
+end
+
+module.TempReveal = function(part)
+	local revealed = module.Reveal(part)
+	if revealed then
+		revealed:SetAttribute("TempRevealed", true)
+	end
+end
+
+module.HideTempRevealedParts = function(root)
+	if not root then
+		return
+	end
+	for _, part in root:GetChildren() do
+		if part:GetAttribute("TempRevealed") then
+			part:SetAttribute("TempRevealed", nil)
+			module.Hide(part)
+		end
+	end
+end
+
+return module
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+			<Item class="ModuleScript" referent="RBX31C464BC97A5470AA5A29C826B5AFE8A">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">ZoneUtil</string>
+					<string name="ScriptGuid">{3339C05C-696F-4BAA-AA80-35FC8DCE9D7C}</string>
+					<ProtectedString name="Source"><![CDATA[local ZoneUtil = {}
+
+function ZoneUtil.InZone(zone, pos)
+	local floorMatch = zone:FindFirstChild("Floor") == nil
+	local roofMatch = false
+
+	for _, part in pairs(zone:GetChildren()) do
+		local rel = part.CFrame:PointToObjectSpace(pos)
+
+		if math.abs(rel.X) <= part.Size.X / 2 and math.abs(rel.Z) <= part.Size.Z / 2 then
+			if part.Name == "Roof" and rel.Y <= 0 then
+				roofMatch = true
+			elseif part.Name == "Floor" and rel.Y >= 0 then
+				floorMatch = true
+			end
+
+			if floorMatch and roofMatch then
+				return true
+			end
+		end
+	end
+	
+	return false
+end
+
+function ZoneUtil.GetZone(pos)
+	local LevelBase = workspace:FindFirstChild("DebugMission") or workspace:FindFirstChild("Level")
+	for _, zone in pairs(LevelBase.Cells:GetChildren()) do
+		if ZoneUtil.InZone(zone, pos) then
+			return zone
+		end
+	end
+end
+
+return ZoneUtil]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="Folder" referent="RBXEE169C905E204CE085ECCB00015DF6DB">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
@@ -1967,16 +2659,52 @@ return module
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBXCA8A2B4A75594183AEF50B684895273D">
+			<Item class="ModuleScript" referent="RBXAC427758DAD5494EB2A4F0FEB67A13B9">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">GetZone</string>
+					<string name="ScriptGuid">{64315846-3CEB-4470-BDDA-5A61A06C9302}</string>
+					<ProtectedString name="Source"><![CDATA[return function(pos)
+	local LevelBase = workspace:FindFirstChild("DebugMission") or workspace:FindFirstChild("Level")
+	for _, zone in pairs(LevelBase.Cells:GetChildren()) do
+		local floorMatch = zone:FindFirstChild("Floor") == nil
+		local roofMatch = false
+		
+		for _, part in pairs(zone:GetChildren()) do
+			local rel = part.CFrame:PointToObjectSpace(pos)
+			
+			if math.abs(rel.X) <= part.Size.X / 2 and math.abs(rel.Z) <= part.Size.Z / 2 then
+				if part.Name == "Roof" and rel.Y <= 0 then
+					roofMatch = true
+				elseif part.Name == "Floor" and rel.Y >= 0 then
+					floorMatch = true
+				end
+				
+				if floorMatch and roofMatch then
+					return zone
+				end
+			end
+		end
+	end
+end]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+			<Item class="ModuleScript" referent="RBX91C85FD3610447F1A13714F7EFF4D03E">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 					<bool name="DefinesCapabilities">false</bool>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Main</string>
-					<string name="ScriptGuid">{A854DF27-3E2D-48FC-84BB-9AEDBFB18284}</string>
+					<string name="ScriptGuid">{46C1C558-C6D8-4924-8987-70D00F724F3F}</string>
 					<ProtectedString name="Source"><![CDATA[local AxisAlign = require(script.Parent.Parent.Util.AxisAlign)
 local GetZone = require(script.Parent.GetZone)
+local VisibilityToggle = require(script.Parent.Parent.Util.VisibilityToggle)
 
 local UserInputService = game:GetService("UserInputService")
 
@@ -2218,6 +2946,8 @@ return {
 				ShowLinks()
 			end
 		end)
+
+		VisibilityToggle.TempReveal(workspace.DebugMission.Cells)
 		
 		print([[T - Reoptimize Cell Floors
 		G - Show All Cells
@@ -2236,508 +2966,6 @@ return {
 		if Ghost then
 			Ghost:Destroy()
 			Ghost = nil
-		end
-	end,
-}]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
-			<Item class="ModuleScript" referent="RBX75F465356B1244A5B1D8D25630237161">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-					<bool name="DefinesCapabilities">false</bool>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">GetZone</string>
-					<string name="ScriptGuid">{A88510FB-CF31-488E-9863-840C3A66D1C3}</string>
-					<ProtectedString name="Source"><![CDATA[return function(pos)
-	local LevelBase = workspace:FindFirstChild("DebugMission") or workspace:FindFirstChild("Level")
-	for _, zone in pairs(LevelBase.Cells:GetChildren()) do
-		local floorMatch = zone:FindFirstChild("Floor") == nil
-		local roofMatch = false
-		
-		for _, part in pairs(zone:GetChildren()) do
-			local rel = part.CFrame:PointToObjectSpace(pos)
-			
-			if math.abs(rel.X) <= part.Size.X / 2 and math.abs(rel.Z) <= part.Size.Z / 2 then
-				if part.Name == "Roof" and rel.Y <= 0 then
-					roofMatch = true
-				elseif part.Name == "Floor" and rel.Y >= 0 then
-					floorMatch = true
-				end
-				
-				if floorMatch and roofMatch then
-					return zone
-				end
-			end
-		end
-	end
-end]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
-		</Item>
-		<Item class="Folder" referent="RBX9355BA47F619466683E70E5C9CCA4A45">
-			<Properties>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-				<bool name="DefinesCapabilities">false</bool>
-				<string name="Name">CombatMap</string>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-			</Properties>
-			<Item class="ModuleScript" referent="RBXCFC5F593E97B4891B503F112F0F484E3">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-					<bool name="DefinesCapabilities">false</bool>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">Main</string>
-					<string name="ScriptGuid">{357F0AA6-58BA-45DB-B634-5E4F3BCE5B28}</string>
-					<ProtectedString name="Source"><![CDATA[local HttpService = game:GetService("HttpService")
-
-local module = {}
-
-local DrawnModel = nil
-local ClickConnection = nil
-local CurrentMap = nil
-
-local BLUE = Color3.fromRGB(110, 153, 202)
-local BLACK = Color3.fromRGB(0, 0, 0)
-local WHITE = Color3.new(1, 1, 1)
-
-local function DrawLine(p0, p1, color)
-	local p = Instance.new("Part")
-	p.Size = Vector3.new(1, 1, (p0 - p1).Magnitude)
-	p.CFrame = CFrame.new((p0 + p1) / 2, p0)
-	p.Color = color
-	p.CastShadow = false
-	return p
-end
-
-local function LinkId(id0, id1)
-	if id0 < id1 then
-		return id0 .. "|" .. id1
-	end
-	return id1 .. "|" .. id0
-end
-
-function module.Init(mouse: PluginMouse)
-	if module.Active then return end
-	module.Active = true
-	
-	local function RedrawMap(id)
-		if DrawnModel then
-			DrawnModel:Destroy()
-			DrawnModel = nil
-		end
-
-		DrawnModel = Instance.new("Model")
-		DrawnModel.Parent = workspace
-		
-		local part = CurrentMap[id]
-		local used = {}
-		local blocked = part:GetAttribute("BlockedLinks") or "{}"
-		blocked = game:GetService("HttpService"):JSONDecode(blocked)
-		
-		local FilteredLinks = {}
-
-		local distLeft = {
-			[id] = 3
-		}
-		local expandFrom = {id}
-
-		while #expandFrom > 0 do
-			local checkId = expandFrom[1]
-			table.remove(expandFrom, 1)
-
-			local part = CurrentMap:FindFirstChild(checkId)
-			local linkTo = HttpService:JSONDecode(part:GetAttribute("LinkedIds"))
-
-			for _, targetId in linkTo do
-				local linkName = LinkId(checkId, targetId)
-				
-				local linkPart = CurrentMap:FindFirstChild(targetId)
-				local p = DrawLine(part.Position, linkPart.Position, Color3.new(0, 0, 0.8), BLUE)
-				p.Parent = DrawnModel
-				p.Name = linkName
-				
-				if blocked[linkName] then
-					p.Color = BLACK
-				else
-					table.insert(FilteredLinks, targetId)
-					if distLeft[checkId] > 1 and not distLeft[targetId] then
-						table.insert(expandFrom, targetId)
-					end
-				end
-				distLeft[targetId] = distLeft[checkId] - 1
-			end
-		end
-		
-		part:SetAttribute("FilteredLinks", HttpService:JSONEncode(FilteredLinks))
-		part.Color = BLACK
-	end
-	
-	ClickConnection = mouse.Button1Down:Connect(function(target)
-		local part = mouse.Target
-		if part:IsDescendantOf(workspace.DebugMission.CombatFlowMap) then
-			CurrentMap = part.Parent
-			for _, p in CurrentMap:GetChildren() do
-				p.Name = p:GetAttribute("Id")
-			end
-			
-			local id = part:GetAttribute("Id")
-			game.Selection:Set({ part })
-			
-			RedrawMap(id)
-		elseif part.Name:match("|") and #part.Name == 73 then
-			local node = game.Selection:Get()[1]
-			local blocked = node:GetAttribute("BlockedLinks") or "{}"
-			blocked = game:GetService("HttpService"):JSONDecode(blocked)
-			
-			blocked[part.Name] = if not blocked[part.Name] then true else nil
-			
-			node:SetAttribute("BlockedLinks", HttpService:JSONEncode(blocked))
-			RedrawMap(node.Name)
-		else
-			local id0, id1 = part.Name:match("|")
-			
-			if DrawnModel then
-				DrawnModel:Destroy()
-				DrawnModel = nil
-			end
-		end
-	end)
-end
-
-function module.Clean()
-	if DrawnModel then
-		DrawnModel:Destroy()
-		DrawnModel = nil
-	end
-	
-	if ClickConnection then
-		ClickConnection:Disconnect()
-		ClickConnection = nil
-	end
-	
-	module.Active = false
-end
-
-return module
-]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
-		</Item>
-		<Item class="Folder" referent="RBX954400F104964DFF9F5C3E16315BF132">
-			<Properties>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-				<bool name="DefinesCapabilities">false</bool>
-				<string name="Name">MeadowMap</string>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-			</Properties>
-			<Item class="ModuleScript" referent="RBXB929A4E96F0742BF981BB01D6A227CAE">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-					<bool name="DefinesCapabilities">false</bool>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">Main</string>
-					<string name="ScriptGuid">{650582EB-554D-49E0-97B4-B797452471AE}</string>
-					<ProtectedString name="Source"><![CDATA[local HttpService = game:GetService("HttpService")
-
-local AxisAlign = require(script.Parent.Parent.Util.AxisAlign)
-local ZoneUtil = require(script.Parent.Parent.Util.ZoneUtil)
-
-local UserInputService = game:GetService("UserInputService")
-local UserInputConnection
-
-local DOOR_BUFFER = 4.5
-
-local CurrentZone = nil
-local CurrentMap = {}
-local CurrentModel = nil
-local LinkWith = nil
-
-local function CloseZone()
-	if CurrentModel then
-		CurrentModel:Destroy()
-		CurrentModel = nil
-	end
-	CurrentMap = {}
-	CurrentZone = nil
-end
-
-local function CheckLOS(p0, p1)
-	if p0 == p1 then return false end
-	local result = workspace:Raycast(p0.Position + Vector3.new(0, 0.75, 0), p1.Position - p0.Position)
-	return not result or result.Instance == p1
-end
-
-local function AddLink(p0, p1)
-	local l0 = Instance.new("Part")
-	l0.Size = Vector3.new(0.4, 0.4, (p0.Position - p1.Position).magnitude / 2)
-	l0.Transparency = 0.5
-	local l1 = l0:Clone()
-	
-	l0.CFrame = CFrame.new(p0.Position * 0.75 + p1.Position * 0.25, p0.Position)
-	if not CurrentMap[p0][p1] then
-		CurrentMap[p0][p1] = l0
-		l0.BrickColor = BrickColor.new("Bright blue")
-		l0.Parent = CurrentModel
-	end
-	
-	l1.CFrame = CFrame.new(p1.Position * 0.75 + p0.Position * 0.25, p1.Position)
-	if not CurrentMap[p1][p0] then
-		CurrentMap[p1][p0] = l1
-		l1.BrickColor = BrickColor.new("Bright blue")
-		l1.Parent = CurrentModel
-	end
-end
-
-local function AddOneWayLink(p0, p1)
-	local l0 = Instance.new("Part")
-	l0.Size = Vector3.new(0.4, 0.4, (p0.Position - p1.Position).magnitude / 2)
-	l0.Transparency = 0.5
-
-	l0.CFrame = CFrame.new(p0.Position * 0.75 + p1.Position * 0.25, p0.Position)
-	if not CurrentMap[p0][p1] then
-		CurrentMap[p0][p1] = l0
-		l0.BrickColor = BrickColor.new("Bright blue")
-		l0.Parent = CurrentModel
-	end
-end
-
-local function CreateNode(pos, placed, generateLinks)
-	local p = Instance.new("Part")
-	p.Size = Vector3.new(2, 2, 2)
-	p.Parent = CurrentModel
-	p.CFrame = CFrame.new(pos)
-	p.BrickColor = BrickColor.new("Bright blue")
-	if placed then p.Transparency = 0.5 end
-	CurrentMap[p] = {}
-	if generateLinks then
-		for node in pairs(CurrentMap) do
-			if node ~= p and CheckLOS(node, p) then
-				AddLink(node, p)
-			end
-		end
-	end
-	return p
-end
-
-local function OpenZone(newZone)
-	if CurrentZone then
-		CloseZone()
-	end
-
-	local DoorNodes = {}
-	for _, prop in pairs(workspace.DebugMission.Props:GetChildren()) do
-		if prop.Name:match("Door") then
-			local p0 = (prop.CFrame * CFrame.new(0, -3, DOOR_BUFFER)).p
-			local p1 = (prop.CFrame * CFrame.new(0, -3, -DOOR_BUFFER)).p
-			if ZoneUtil.InZone(newZone, p0) then table.insert(DoorNodes, p0) end
-			if ZoneUtil.InZone(newZone, p1) then table.insert(DoorNodes, p1) end
-		end
-	end
-	
-	if workspace.DebugMission.Cells:FindFirstChild("Links") then
-		for _, link in pairs(workspace.DebugMission.Cells.Links:GetChildren()) do
-			if link:GetAttribute("Path") then
-				local p0 = (link.CFrame * CFrame.new(0, 0.5, DOOR_BUFFER)).p
-				local p1 = (link.CFrame * CFrame.new(0, 0.5, -DOOR_BUFFER)).p
-				if ZoneUtil.InZone(newZone, p0) then table.insert(DoorNodes, p0) end
-				if ZoneUtil.InZone(newZone, p1) then table.insert(DoorNodes, p1) end
-			end
-		end
-	end
-
-	CurrentModel = Instance.new("Model")
-	CurrentModel.Parent = workspace
-	CurrentMap = {}
-	CurrentZone = newZone
-
-	for _, pos in pairs(DoorNodes) do
-		CreateNode(pos, false, true)
-	end
-	
-	if CurrentZone:GetAttribute("Path") then
-		local data = HttpService:JSONDecode(CurrentZone:GetAttribute("Path"))
-		if data.Placed then
-			for _, placed in pairs(data.Placed) do
-				CreateNode(Vector3.new(unpack(placed)), true, true)
-			end
-		end
-	end
-end
-
-local function OpenZoneWithoutRegenerating(newZone)
-	if CurrentZone then
-		CloseZone()
-	end
-	
-	CurrentModel = Instance.new("Model")
-	CurrentModel.Parent = workspace
-	CurrentMap = {}
-	CurrentZone = newZone
-
-	if not CurrentZone:GetAttribute("Path") then
-		warn("Nodes never generated for this cell, press T first")
-	end
-		
-	local data = HttpService:JSONDecode(CurrentZone:GetAttribute("Path"))
-	local PlacedNodes = {}
-	if data.Placed then
-		for _, placed in pairs(data.Placed) do
-			local node = Vector3.new(unpack(placed))
-			PlacedNodes[node] = true
-		end
-	end
-	
-	local NodeParts = {}
-	for _, node in pairs(data.Node) do
-		local pos = Vector3.new(unpack(node))
-		local nodePart = CreateNode(pos, PlacedNodes[pos], false)
-		table.insert(NodeParts, nodePart)
-	end
-	
-	for startIndex, list in data.Link do
-		for _, endIndex in list do
-			AddOneWayLink(NodeParts[startIndex], NodeParts[endIndex])
-		end
-	end
-end
-
-local function RemovePart(part)
-	if CurrentMap[part] then -- Is node
-		for _, linkPart in pairs(CurrentMap[part]) do
-			linkPart:Destroy()
-		end
-		CurrentMap[part] = nil
-		for node, links in pairs(CurrentMap) do
-			if links[part] then
-				links[part]:Destroy()
-				links[part] = nil
-			end
-		end
-		part:Destroy()
-	else -- Is link
-		for node, linkList in pairs(CurrentMap) do
-			for link, linkPart in pairs(linkList) do
-				if linkPart == part then
-					linkPart:Destroy()
-					linkList[link] = nil
-					break
-				end
-			end
-		end
-	end
-end
-
-local function Serialize()
-	local node = {}
-	local nodeId = {}
-	local link = {}
-	local placed = {}
-	
-	local function getNode(p)
-		if not nodeId[p] then
-			local pos = p.Position
-			node[#node+1] = {pos.X, pos.Y, pos.Z}
-			nodeId[p] = #node
-			
-			if p.Transparency > 0.25 then
-				table.insert(placed, node[#node])
-			end
-		end
-		return nodeId[p]
-	end
-	
-	for node, linkList in pairs(CurrentMap) do
-		local id = getNode(node)
-		local links = {}
-		for linkNode in pairs(linkList) do
-			table.insert(links, getNode(linkNode))
-		end
-		link[id] = links
-	end
-	
-	return HttpService:JSONEncode({
-		Node = node,
-		Link = link,
-		Placed = placed,
-	})
-end
-
-local function Save()
-	CurrentZone:SetAttribute("Path", Serialize())
-end
-
-return {
-	Init = function(mouse)
-		print("T - Open Cell Meadow Map")
-		print("Y - Open Cell Meadow Map (No Link Regeneration)")
-		print("G - Add Node")
-		print("H - Add Node (No Link Generation)")
-		print("R - Remove")
-		
-		UserInputConnection = UserInputService.InputBegan:Connect(function(io)
-			if io.KeyCode == Enum.KeyCode.T then
-				local zone = ZoneUtil.GetZone(mouse.Hit.p)
-				if zone then 
-					OpenZone(zone) 
-					Save()
-				end
-			elseif io.KeyCode == Enum.KeyCode.Y then
-				local zone = ZoneUtil.GetZone(mouse.Hit.p)
-				if zone then 
-					OpenZoneWithoutRegenerating(zone) 
-					Save()
-				end
-			elseif io.KeyCode == Enum.KeyCode.G then
-				if CurrentZone then
-					CreateNode(mouse.Hit.p + Vector3.new(0, 1, 0), true, true)
-					Save()
-				end
-			elseif io.KeyCode == Enum.KeyCode.H then
-				if CurrentZone then
-					CreateNode(mouse.Hit.p + Vector3.new(0, 1, 0), true, false)
-					Save()
-				end
-			elseif io.KeyCode == Enum.KeyCode.R then
-				if mouse.Target then
-					RemovePart(mouse.Target)
-					Save()
-				end
-			elseif io.UserInputType == Enum.UserInputType.MouseButton1 then
-				if LinkWith then
-					if CurrentMap[LinkWith] and CurrentMap[mouse.Target] then
-						AddLink(LinkWith, mouse.Target)
-						Save()
-					else
-						print("Link failed")
-					end
-					LinkWith = nil
-				elseif CurrentMap[mouse.Target] then
-					LinkWith = mouse.Target
-					print("Click another node to link")
-				end
-			end
-		end)
-	end,
-	Clean = function()
-		if UserInputConnection then
-			UserInputConnection:Disconnect()
-			UserInputConnection = nil
-		end
-		if CurrentZone then
-			CloseZone()
 		end
 	end,
 }]]></ProtectedString>

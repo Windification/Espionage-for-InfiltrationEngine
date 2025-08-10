@@ -1,0 +1,20 @@
+local PropAttributeTypes
+
+PropAttributeTypes = {
+	NUMBER = 1,
+	INT = 2,
+	EXPRESSION = 3,
+	STATE_VALUE = 4,
+	STRING = 5,
+	NETWORK_ID = 6,
+	NETWORK_ID_STRING = 7,
+	OPTIONAL_BOOL = 8,
+	OPTIONAL_MISSION_COLOR = 9,
+	OPTIONAL_MATERIAL = 10,
+	VECTOR3 = 11,
+	OPTIONAL_INT = 12,
+	BOOL = 13,
+	CFRAME = 14,
+}
+
+return PropAttributeTypes

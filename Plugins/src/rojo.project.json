@@ -1,0 +1,15 @@
+{
+  "name": "InfiltrationEngineTooling",
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+      "SerializationTools": {
+        "$path": "SerializationTools"
+      },
+      "InfiltrationEngineTools": {
+        "$path": "InfiltrationEngineTools"
+      }
+    }
+  }
+}
