@@ -41,27 +41,29 @@ end
 function module:RecolorProp(part)
 	local model = Prop[part]
 	model = model and model.Model
-	if not model then return end
-	
-	local index = 0	
+	if not model then
+		return
+	end
+
+	local index = 0
 	local search = true
 	local colors = {}
 	while true do
-		local colour = part:GetAttribute("Color"..index)
+		local colour = part:GetAttribute("Color" .. index)
 		if colour then
 			if typeof(colour) == "string" then
 				colour = ColorMap[colour]
 			end
-			colors["Part"..index] = {
+			colors["Part" .. index] = {
 				Color = colour,
-				Material = part:GetAttribute("Material"..index)
+				Material = part:GetAttribute("Material" .. index),
 			}
 			index += 1
 		else
 			break
 		end
 	end
-	
+
 	for _, p in pairs(model:GetDescendants()) do
 		if p:IsA("BasePart") and colors[p.Name] then
 			for prop, value in pairs(colors[p.Name]) do
@@ -73,19 +75,21 @@ end
 
 -- Add/Remove
 
+local BaseByModel = {}
 function module:AddProp(basePart)
 	if not basePart:IsA("BasePart") then
 		return
 	end
-	
+
 	if Prop[basePart] then
 		return
 	end
-	
-	local storedModel = CustomPropsFolder._Value and CustomPropsFolder._Value:FindFirstChild(basePart.Name) or ModelFolder and ModelFolder:FindFirstChild(basePart.Name)
+
+	local storedModel = CustomPropsFolder._Value and CustomPropsFolder._Value:FindFirstChild(basePart.Name)
+		or ModelFolder and ModelFolder:FindFirstChild(basePart.Name)
 	if storedModel then
 		basePart.Transparency = 1
-		
+
 		local model = storedModel:Clone()
 		for _, p in pairs(model:GetDescendants()) do
 			if p:IsA("BasePart") then
@@ -93,7 +97,7 @@ function module:AddProp(basePart)
 				p.CollisionGroup = COLLISON_GROUP
 			end
 		end
-		
+
 		Prop[basePart] = {
 			Model = model,
 			Events = {
@@ -102,10 +106,11 @@ function module:AddProp(basePart)
 				end),
 				basePart.AttributeChanged:Connect(function()
 					self:RecolorProp(basePart)
-				end)
-			}
+				end),
+			},
 		}
 		model.Parent = self.Folder
+		BaseByModel[model] = basePart
 		self:RepositionProp(basePart)
 		self:RecolorProp(basePart)
 	end
@@ -115,9 +120,10 @@ function module:RemoveProp(basePart)
 	if basePart:IsA("BasePart") then
 		basePart.Transparency = 0.5
 	end
-	
+
 	local propData = Prop[basePart]
 	if propData then
+		BaseByModel[propData.Model] = nil
 		propData.Model:Destroy()
 		for _, event in pairs(propData.Events) do
 			event:Disconnect()
@@ -130,14 +136,16 @@ module.OverlaysEnabled = false
 module.EnabledState = State(false)
 
 function module:SetEnabled()
-	if self.Enabled then return end
+	if self.Enabled then
+		return
+	end
 	self.Enabled = true
 
 	if workspace.DebugMission:FindFirstChild("MissionSetup") then
 		local missionData = require(workspace.DebugMission.MissionSetup:Clone())
 		ColorMap = missionData.Colors or {}
 	end
-	
+
 	module.Folder = workspace:FindFirstChild("PropPreviewModels") or Instance.new("Folder")
 	module.Folder.Archivable = false
 	module.Folder.Parent = workspace
@@ -149,36 +157,50 @@ function module:SetEnabled()
 	for _, prop in pairs(workspace.DebugMission.Props:GetDescendants()) do
 		module:AddProp(prop)
 	end
-	
-	local HiddenModel = nil
-	
+
+	local HiddenModels = {}
+
 	module.AddEvents = {
-		workspace.DebugMission.Props.ChildAdded:Connect(function(p)
+		workspace.DebugMission.Props.DescendantAdded:Connect(function(p)
 			self:AddProp(p)
 		end),
-		workspace.DebugMission.Props.ChildRemoved:Connect(function(p)
+		workspace.DebugMission.Props.DescendantRemoving:Connect(function(p)
 			self:RemoveProp(p)
 		end),
 		game.Selection.SelectionChanged:Connect(function()
-			if HiddenModel then
-				HiddenModel.Parent = workspace
-				HiddenModel = nil
+			local selectedParts = {}
+			local didSubstitution = false
+			for _, part in game.Selection:Get() do
+				local sub = BaseByModel[part]
+				if sub then
+					didSubstitution = true
+					selectedParts[sub] = true
+				else
+					selectedParts[part] = true
+				end
 			end
-			local s = game.Selection:Get()
-			if #s == 1 then
-				local target = s[1]
-				if Prop[target] then
-					Prop[target].Model.Parent = nil
-					HiddenModel = Prop[target].Model
-				elseif target.ClassName == "Model" then
-					for base, data in Prop do
-						if data.Model == target then
-							game.Selection:Set({ base })
-						end
+
+			if didSubstitution then
+				local newList = {}
+				for p in selectedParts do
+					table.insert(newList, p)
+					game.Selection:Set(newList)
+				end
+			else
+				for base, model in HiddenModels do
+					if not selectedParts[base] then
+						model.Parent = workspace
+						HiddenModels[base] = nil
+					end
+				end
+				for base in selectedParts do
+					if Prop[base] then
+						HiddenModels[base] = Prop[base].Model
+						HiddenModels[base].Parent = nil
 					end
 				end
 			end
-		end)
+		end),
 	}
 end
 
@@ -195,7 +217,7 @@ local SearchResults = Derived(function(text, customProps)
 			for _, item in customProps:GetChildren() do
 				if not ModelFolder:FindFirstChild(item.Name) and string.lower(item.Name):match(string.lower(text)) then
 					table.insert(list, item.Name)
-				end	
+				end
 			end
 		end
 	end
@@ -203,30 +225,36 @@ local SearchResults = Derived(function(text, customProps)
 end, SearchText, CustomPropsFolder)
 
 function module:SetDisabled()
-	if not self.Enabled then return end
+	if not self.Enabled then
+		return
+	end
 	self.Enabled = false
 
 	module.Folder:Destroy()
-	
+
 	for _, e in pairs(self.AddEvents) do
 		e:Disconnect()
 	end
 	self.AddEvents = nil
-	
+
 	PhysicsService:RemoveCollisionGroup(COLLISON_GROUP)
 
-	for _, prop in pairs(workspace.DebugMission.Props:GetChildren()) do
+	for _, prop in pairs(workspace.DebugMission.Props:GetDescendants()) do
 		module:RemoveProp(prop)
 	end
 end
 
 -- Init/Cleanup
 module.Init = function(mouse: PluginMouse)
-	if module.Active then return end
+	if module.Active then
+		return
+	end
 	module.Active = true
-	
-	CustomPropsFolder:set(workspace:FindFirstChild("DebugMission") and workspace.DebugMission:FindFirstChild("CustomProps") or false)
-	
+
+	CustomPropsFolder:set(
+		workspace:FindFirstChild("DebugMission") and workspace.DebugMission:FindFirstChild("CustomProps") or false
+	)
+
 	local searchBox
 	searchBox = Create("TextBox", {
 		PlaceholderText = "Search For Prop",
@@ -242,7 +270,7 @@ module.Init = function(mouse: PluginMouse)
 		BackgroundColor3 = Color3.new(1, 1, 1),
 		BackgroundTransparency = 0.5,
 	})
-	
+
 	module.UI = Create("ScreenGui", {
 		Parent = game.StarterGui,
 		Archivable = false,
@@ -270,7 +298,7 @@ module.Init = function(mouse: PluginMouse)
 			Position = UDim2.new(0, 50, 0.9, 0),
 			AnchorPoint = Vector2.new(0, 1),
 			AutomaticCanvasSize = Enum.AutomaticSize.Y,
-			BackgroundTransparency = 1
+			BackgroundTransparency = 1,
 		}, {
 			Create("UIListLayout", {}),
 			DerivedTable(function(index, value)
@@ -278,9 +306,10 @@ module.Init = function(mouse: PluginMouse)
 					Text = value,
 					Enabled = State(false),
 					Activated = function()
-						local model = CustomPropsFolder._Value and CustomPropsFolder._Value:FindFirstChild(value) or ModelFolder[value]
+						local model = CustomPropsFolder._Value and CustomPropsFolder._Value:FindFirstChild(value)
+							or ModelFolder[value]
 						local base = model and model:FindFirstChild("Base")
-						if base then 
+						if base then
 							local prop = base:Clone()
 							prop.Name = value
 							prop.Transparency = 0.5
@@ -290,17 +319,19 @@ module.Init = function(mouse: PluginMouse)
 					end,
 					Size = UDim2.new(1, 0, 0, 30),
 				})
-			end, SearchResults)
-		})
+			end, SearchResults),
+		}),
 	})
 end
 
 module.Clean = function()
-	if not module.Active then return end
+	if not module.Active then
+		return
+	end
 	module.Active = false
-	
+
 	module.UI:Destroy()
-	module.UI = nil	
+	module.UI = nil
 end
 
 return module

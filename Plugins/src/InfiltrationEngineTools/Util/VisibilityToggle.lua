@@ -32,7 +32,6 @@ end
 
 module.Reveal = function(part)
 	local link = part:FindFirstChild(STASH_LINK_NAME)
-	print("Try reveal:", part, link)
 	if not link then
 		return false
 	end

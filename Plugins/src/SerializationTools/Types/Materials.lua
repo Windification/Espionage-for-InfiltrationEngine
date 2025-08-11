@@ -11,7 +11,7 @@ Materials = {
 	DiamondPlate = 8,
 	Fabric = 9,
 	Foil = 10,
-	Forcefield = 11,
+	ForceField = 11,
 	Glacier = 12,
 	Glass = 13,
 	Granite = 14,
@@ -38,6 +38,12 @@ Materials = {
 	WoodPlanks = 35,
 	ClayRoofTiles = 36,
 	Carpet = 37,
+	Cardboard = 38,
+	CeramicTiles = 39,
+	RoofShingles = 40,
+	Leather = 41,
+	Plaster = 42,
+	Rubber = 43,
 }
 
 return Materials
