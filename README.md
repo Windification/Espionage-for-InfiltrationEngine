@@ -1,3 +1,6 @@
+> [!CAUTION]
+> **Espionage isn't done!** V1.0-alpha.0 will bring the release of Espionage to github!
+
 > "What if there was a plugin that had everything?
 > I don't want to click all those buttons." - Windification
 
